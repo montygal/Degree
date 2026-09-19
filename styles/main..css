@@ -1,4 +1,4 @@
-@media screen and (max-width: 400px) {
+/*@media screen and (max-width: 400px) {
     .body {
         display: flex;
         flex-direction: column;
@@ -18,12 +18,12 @@
         flex-direction: column;
     }
 }
-
+*/
 /*This is for the header on the main page*/
 h1{
     /*background-color, then a gradient acting as a bottom border line*/
     background: #ffffff linear-gradient(to right, #79fae9a2, #79fae9a2) no-repeat bottom 100% 1px;
     font-family: 'Roboto', sans-serif;
-    align-content: center;
+    text-align: center;
 
 }
