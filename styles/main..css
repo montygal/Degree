@@ -1,4 +1,4 @@
-/*@media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
     .body {
         display: flex;
         flex-direction: column;
@@ -18,12 +18,98 @@
         flex-direction: column;
     }
 }
-*/
-/*This is for the header on the main page*/
-h1{
+
+
+
+
+
+
+/*HEADER ON THE MAIN PAGE*/
+.stitch {
     /*background-color, then a gradient acting as a bottom border line*/
-    background: #ffffff linear-gradient(to right, #79fae9a2, #79fae9a2) no-repeat bottom 100% 1px;
+    background-color: #5ae7c9;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-
 }
+
+
+
+
+
+
+/*DROP DOWN LIST*/
+/* Container needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* The button that triggers the dropdown */
+.dropbtn {
+  background-color: #a9b5b9;
+  color: rgb(0, 8, 7);
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.dropbtn:hover {
+  background-color: #1d4ed8;
+}
+/* The dropdown menu (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 10; /* Ensures it sits on top of other content */
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #333333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+/* Change link color on hover */
+.dropdown-content a:hover {
+  background-color: #f1f5f9;
+  color: #3f1aa7;
+}
+/* Show the dropdown menu when hovering over the container */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+
+
+
+/*"HOME" link*/
+.navbar {
+  display: flex;
+  justify-content: right; /* Pushes logo to left and Home to right */
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.home-link {
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 16px;
+}
+.home-link:hover {
+  color: #2563eb;
+}
+
