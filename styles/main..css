@@ -113,3 +113,36 @@
   color: #2563eb;
 }
 
+
+
+
+
+
+
+/*PICTURE LAYOUT*/
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);  /* Exactly 2 columns, each 250px wide */
+  gap: 20px;                               /* Space between the images */
+  justify-content: center;                 /* Centers the grid horizontally on the page */
+  padding: 40px 20px;
+}
+.image-grid img {
+  width: 100%;                             /* Fills the 250px column */
+  height: 200px;                           /* Uniform height for all 4 images */
+  object-fit: cover;                       /* Crops image cleanly without distortion */
+  border-radius: 8px;                      /* Optional: rounded corners */
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  gap: 20px;
+  justify-content: center;                 /* Center horizontally */
+  align-content: center;                   /* Center vertically */
+  min-height: 100vh;                       /* Takes up full screen height */
+}
+
+
+
+
