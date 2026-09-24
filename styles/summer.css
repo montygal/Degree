@@ -1,0 +1,21 @@
+/*"HOME" link*/
+.navbar {
+  display: flex;
+  justify-content: right;
+  /* Pushes logo to left and Home to right */
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.home-link {
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.home-link:hover {
+  color: #2563eb;
+}
