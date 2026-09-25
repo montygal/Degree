@@ -1,21 +1,115 @@
-/*"HOME" link*/
-.navbar {
-  display: flex;
-  justify-content: right;
-  /* Pushes logo to left and Home to right */
-  align-items: center;
-  padding: 15px 30px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+/*DIFFERENT DISPLAY FOR MOBILE DEVICES*/
+@media screen and (max-width: 400px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-.home-link {
-  text-decoration: none;
-  color: #1f2937;
-  font-weight: 500;
-  font-size: 16px;
+@media screen and (max-width: 400px) {
+    .left {
+        display: flex;
+        flex-direction: column;
+    }
 }
+
+@media screen and (max-width: 400px) {
+    .right {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+/*HEADER ON THE MAIN PAGE*/
+/* Container needed to position the dropdown content */
+/* 1. Ensure the green container is the anchor */
+.stitch {
+  position: relative;
+  text-align: center;
+  background-color: #46e9c5;
+  padding: 30px 20px;
+}
+/* 2. Position Home on the top-right */
+.home-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgba(221,68,132,0.918);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1.5px solid #ffffff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: rgba(221,68,132,0.918);
+  transition: all 0.2s ease;
+}
+
+a.home-link {
+    color: #ffffff;
+  }
+
+
 
 .home-link:hover {
-  color: #2563eb;
+  background-color: #ffffff;
+  color: hsl(180, 24%, 93%);
+}
+
+
+
+
+
+
+
+/*CSS for pictures with captions*/
+body {
+  margin: 0;
+}
+.summer {
+  display: flex;
+  justify-content: center; /* Centers everything horizontally */
+  align-items: center;     /* Centers everything vertically */
+  min-height: 100vh;
+  gap: 24px;               /* Space between the two cards */
+}
+figure {
+  margin: 0;               /* Removes default browser margin on <figure> */
+  text-align: center;      /* Centers the text under the image */
+}
+figure img {
+  max-width: 40vw;         /* Keeps images responsive */
+  height: auto;
+  display: block;          /* Removes extra space below inline images */
+  border-radius: 8px;      /* Optional: rounded corners */
+}
+figcaption {
+  margin-top: 10px;        /* Spacing between image and caption */
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+
+
+/*DATE AND TIME API*/
+#datetime {
+  position: fixed;           /* Pins it to the screen */
+  bottom: 20px;              /* Distance from bottom */
+  left: 20px;                /* Distance from left */
+  
+  background-color:#46e9c5;
+  color: #020202;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;              /* Keeps it on top of images */
+  backdrop-filter: blur(4px); /* Modern frosted-glass blur */
 }

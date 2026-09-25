@@ -1,3 +1,4 @@
+/*DIFFERENT DISPLAY FOR MOBILE DEVICES*/
 @media screen and (max-width: 400px) {
     .body {
         display: flex;
@@ -25,64 +26,87 @@
 
 
 /*HEADER ON THE MAIN PAGE*/
+/* Container needed to position the dropdown content */
+/* 1. Ensure the green container is the anchor */
 .stitch {
-    /*background-color, then a gradient acting as a bottom border line*/
-    background-color: #5ae7c9;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
+  position: relative;
+  text-align: center;
+  background-color: #46e9c5;
+  padding: 30px 20px;
+}
+/* 2. Position Home on the top-right */
+.home-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgba(221,68,132,0.918);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1.5px solid #ffffff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: rgba(221,68,132,0.918);
+  transition: all 0.2s ease;
 }
 
+a.home-link {
+    color: #ffffff;
+  }
 
 
 
-
-
-/*DROP DOWN LIST*/
-/* Container needed to position the dropdown content */
+.home-link:hover {
+  background-color: #ffffff;
+  color: hsl(180, 24%, 93%);
+}
+/* 3. Position Dropdown on the top-left */
 .dropdown {
-  position: relative;
+  position: absolute;
+  top: 20px;
+  left: 20px; /* <--- Puts the button on the left */
   display: inline-block;
 }
-/* The button that triggers the dropdown */
+/* Style the button to match the Home link */
 .dropbtn {
-  background-color: #a9b5b9;
-  color: rgb(0, 8, 7);
-  padding: 10px 18px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
+  background-color: rgba(221, 68, 132, 0.918);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 1.5px solid #ffffff;
+  border-radius: 4px;
+  padding: 6px 14px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 .dropbtn:hover {
-  background-color: #1d4ed8;
+  background-color: #ffffff;
+  color: #2d5a27;
 }
-/* The dropdown menu (hidden by default) */
+/* 4. Dropdown menu content */
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 100%;       /* Appears right below the button */
+  left: 0;         /* Aligns with the left edge of the button */
   background-color: #ffffff;
-  min-width: 180px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
-  border-radius: 6px;
-  overflow: hidden;
-  z-index: 10; /* Ensures it sits on top of other content */
+  min-width: 150px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 100;    /* Floats above images */
 }
-/* Links inside the dropdown */
 .dropdown-content a {
   color: #333333;
-  padding: 12px 16px;
+  padding: 10px 14px;
   text-decoration: none;
   display: block;
-  font-size: 14px;
+  text-align: left;
 }
-/* Change link color on hover */
 .dropdown-content a:hover {
-  background-color: #f1f5f9;
-  color: #3f1aa7;
+  background-color: #f1f1f1;
+  color: #2d5a27;
 }
-/* Show the dropdown menu when hovering over the container */
+/* Show menu when hovering over the dropdown */
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -93,54 +117,56 @@
 
 
 
-/*"HOME" link*/
-.navbar {
-  display: flex;
-  justify-content: right; /* Pushes logo to left and Home to right */
-  align-items: center;
-  padding: 15px 30px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-}
 
-.home-link {
-  text-decoration: none;
-  color: #1f2937;
-  font-weight: 500;
-  font-size: 16px;
-}
-.home-link:hover {
-  color: #2563eb;
-}
-
-
-
-
-
-
-
-/*PICTURE LAYOUT*/
+/*DISPLAY FOR 4 PICTURES ON THE MAIN PAGE*/
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(2, 250px);  /* Exactly 2 columns, each 250px wide */
-  gap: 20px;                               /* Space between the images */
-  justify-content: center;                 /* Centers the grid horizontally on the page */
-  padding: 40px 20px;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal, wide columns */
+  gap: 24px;                             /* Space between images */
+  max-width: 1000px;                     /* Increase this to make them even bigger */
+  margin: 40px auto;                     /* Centers the grid on the page */
+}
+.image-grid a {
+  display: block;                        /* Ensures the link wraps the image cleanly */
 }
 .image-grid img {
-  width: 100%;                             /* Fills the 250px column */
-  height: 200px;                           /* Uniform height for all 4 images */
-  object-fit: cover;                       /* Crops image cleanly without distortion */
-  border-radius: 8px;                      /* Optional: rounded corners */
+  width: 100%;                           /* Image expands to fill the column */
+  height: 300px;                         /* Uniform height */
+  object-fit: cover;                     /* Crops cleanly without stretching */
+  border-radius: 8px;
 }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 250px);
-  gap: 20px;
-  justify-content: center;                 /* Center horizontally */
-  align-content: center;                   /* Center vertically */
-  min-height: 100vh;                       /* Takes up full screen height */
+
+
+
+/* STYLE THE WORDS ON THE MAIN PAGE */
+.image-grid p {
+  margin-top: 10px;         /* Adds space between the image and words */
+  font-size: 18px;          /* Size of the text */
+  font-weight: bold;        /* Makes the text bold (optional) */
+  text-align: center;       /* Centers the text under the image */
+}
+/* Optional: change text color when hovering over the card */
+.image-grid a:hover p {
+  color: #0077cc;
+}
+
+
+/*DATE AND TIME API*/
+#datetime {
+  position: fixed;           /* Pins it to the screen */
+  bottom: 20px;              /* Distance from bottom */
+  left: 20px;                /* Distance from left */
+  
+  background-color:#46e9c5;
+  color: #020202;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;              /* Keeps it on top of images */
+  backdrop-filter: blur(4px); /* Modern frosted-glass blur */
 }
 
 
