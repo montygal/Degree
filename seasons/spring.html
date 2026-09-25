@@ -28,40 +28,42 @@
         <h3>BY:</h3>
         <h2><i>Sariah Tanner</i></h2>
     </div>
-    <div class="spring">
-        <figure>
-            <img src="../images/Africa.jpg" alt="A picture of Africa in the Spring with a butterfly" width="400"
-                height="300" />
-            <figcaption>African Butterfly</figcaption>
-        </figure>
-        <figure>
-            <img src="../images/Africa2.jpg" alt="A picture of Africa in the Spring with a lemur" width="400"
-                height="300" />
-            <figcaption>African Lemur</figcaption>
-        </figure>
-    </div>
-        </div>
-       <div id="datetime"></div>
-<script>
-  function updateDateTime() {
-    const now = new Date();
-    // Format options (e.g., "Thursday, September 24, 2026, 9:30:15 PM")
-    const options = {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
-    };
-    const formatted = now.toLocaleDateString('en-US', options);
-    document.getElementById('datetime').textContent = formatted;
-  }
-  // Update immediately, then every 1 second
-  updateDateTime();
-  setInterval(updateDateTime, 1000);
-</script>
+  <div class="spring">
+    <figure>
+        <a href="../patterns/moth.html">
+            <img src="../images/Africa.jpg" alt="A picture of Africa in the Spring with a moth" width="400" height="300" />
+        </a>
+        <figcaption>African Moth</figcaption>
+    </figure>
+    <figure>
+        <a href="../patterns/lemur.html">
+            <img src="../images/Africa2.jpg" alt="A picture of Africa in the Spring with a lemur" width="400" height="300" />
+        </a>
+        <figcaption>African Lemur</figcaption>
+    </figure>
+</div>
+
+    <div id="datetime"></div>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            // Format options (e.g., "Thursday, September 24, 2026, 9:30:15 PM")
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const formatted = now.toLocaleDateString('en-US', options);
+            document.getElementById('datetime').textContent = formatted;
+        }
+        // Update immediately, then every 1 second
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
 </body>
 
 </html>

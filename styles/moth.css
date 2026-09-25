@@ -1,0 +1,91 @@
+/*DIFFERENT DISPLAY FOR MOBILE DEVICES*/
+@media screen and (max-width: 400px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .left {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .right {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+/*CENTER THE PICTURE AND THE PARAGRAPH*/
+.moth {
+    display: flex;
+    align-items: center;         /* Aligns image and text vertically in the middle */
+    justify-content: center;    /* Centers everything horizontally */
+    gap: 30px;                   /* Space between the image and paragraph */
+    max-width: 900px;            /* Prevents the block from stretching too wide */
+    margin: 40px auto;           /* Centers the entire box on the page */
+    padding: 20px;
+}
+.moth p {
+    max-width: 450px;            /* Keeps paragraph lines easy to read */
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+
+
+
+/*DISPLAY TEXT AND IMAGE SIDE BY SIDE*/
+.moth {
+    display: flex;
+    align-items: center; /* Vertically centers the text with the image (use 'flex-start' to align to the top) */
+    gap: 20px;           /* Adds space between the image and the paragraph */
+}
+.moth img {
+    max-width: 50%;      /* Prevents the image from taking up the entire width */
+    height: auto;
+}
+
+
+
+
+/*HEADER ON THE MAIN PAGE*/
+/* Container needed to position the dropdown content */
+/* 1. Ensure the green container is the anchor */
+.stitch {
+  position: relative;
+  text-align: center;
+  background-color: #46e9c5;
+  padding: 30px 20px;
+}
+/* 2. Position Home on the top-right */
+.home-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgba(221,68,132,0.918);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1.5px solid #ffffff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: rgba(221,68,132,0.918);
+  transition: all 0.2s ease;
+}
+
+a.home-link {
+    color: #ffffff;
+  }
+
+
+
+.home-link:hover {
+  background-color: #ffffff;
+  color: hsl(180, 24%, 93%);
+}
