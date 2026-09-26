@@ -30,37 +30,41 @@
         <h2><i>Sariah Tanner</i></h2>
     </div>
     <div class="fall">
-        <figure>
-            <img src="../images/England.jpg" alt="A cottage in England with overcast skies." width="400" height="300" />
+         <figure>
+            <a href="../patterns/cottage.html">
+                <img src="../images/England.jpg" alt="A picture of a cottage in England." width="400" height="300" />
+            </a>
             <figcaption>English Cottage</figcaption>
         </figure>
         <figure>
-            <img src="../images/England2.jpg" alt="A picture of greenery in England." width="400" height="300" />
+            <a href="../patterns/countryside.html">
+                <img src="../images/England2.jpg" alt="A picture of greenery in England." width="400" height="300" />
+            </a>
             <figcaption>English Countryside</figcaption>
         </figure>
     </div>
-        </div>
-       <div id="datetime"></div>
-<script>
-  function updateDateTime() {
-    const now = new Date();
-    // Format options (e.g., "Thursday, September 24, 2026, 9:30:15 PM")
-    const options = {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
-    };
-    const formatted = now.toLocaleDateString('en-US', options);
-    document.getElementById('datetime').textContent = formatted;
-  }
-  // Update immediately, then every 1 second
-  updateDateTime();
-  setInterval(updateDateTime, 1000);
-</script>
+    </div>
+    <div id="datetime"></div>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            // Format options (e.g., "Thursday, September 24, 2026, 9:30:15 PM")
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const formatted = now.toLocaleDateString('en-US', options);
+            document.getElementById('datetime').textContent = formatted;
+        }
+        // Update immediately, then every 1 second
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
 </body>
 
 </html>

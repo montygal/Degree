@@ -89,3 +89,36 @@ a.home-link {
   background-color: #ffffff;
   color: hsl(180, 24%, 93%);
 }
+
+
+
+
+/*BACK BUTTON IN TOP-LEFT*/
+.back-btn {
+    position: absolute;       /* Positions it relative to the top-left of the page */
+    top: 20px;               /* Distance from top edge */
+    left: 20px;              /* Distance from left edge */
+    
+    /* Button appearance */
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent soft white */
+    color: #333333;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;      /* Rounded pill button */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+    z-index: 100;             /* Keeps it on top of other elements */
+}
+/* Hover effect */
+.back-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transform: translateX(-3px); /* Gently slides left when hovered */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}

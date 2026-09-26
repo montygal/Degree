@@ -22,7 +22,7 @@
 
 
 /*CENTER THE PICTURE AND THE PARAGRAPH*/
-.moth {
+.glacier {
     display: flex;
     align-items: center;         /* Aligns image and text vertically in the middle */
     justify-content: center;    /* Centers everything horizontally */
@@ -31,7 +31,7 @@
     margin: 40px auto;           /* Centers the entire box on the page */
     padding: 20px;
 }
-.moth p {
+.glacier p {
     max-width: 450px;            /* Keeps paragraph lines easy to read */
     font-size: 1.1rem;
     line-height: 1.6;
@@ -41,12 +41,12 @@
 
 
 /*DISPLAY TEXT AND IMAGE SIDE BY SIDE*/
-.moth {
+.glacier {
     display: flex;
     align-items: center; /* Vertically centers the text with the image (use 'flex-start' to align to the top) */
     gap: 20px;           /* Adds space between the image and the paragraph */
 }
-.moth img {
+.glacier img {
     max-width: 50%;      /* Prevents the image from taking up the entire width */
     height: auto;
 }
