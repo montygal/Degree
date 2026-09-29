@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <style>
         body {
@@ -19,12 +18,9 @@
     <title>Ice</title>
     <link rel="stylesheet" href="../styles/ice.css">
 </head>
-
 <body>
-    
     <!-- Back Button in Top-Left -->
     <a href="javascript:history.back()" class="back-btn">&larr; Back</a>
-
     <div class="stitch">
         <!-- Home link on the RIGHT -->
         <a href="/" class="home-link">Home</a>
@@ -34,9 +30,63 @@
     </div>
     <div class="ice">
         <img src="../images/Norway2.jpg" alt="A picture of an icy wall in Norway" width="400" height="300">
-        <p>A solid wall of ice in Norway, shadowing the people in the foreground. This is a great example of the beauty of nature and how it can be captured in a cross stitch pattern.
-            All of the colors are fine tuned and detailed to create a realistic and stunning image. This pattern is perfect for anyone who loves the ocean and its many wonders.
+        <p>A solid wall of ice in Norway, shadowing the people in the foreground. This is a great example of the beauty
+            of nature and how it can be captured in a cross stitch pattern.
+            All of the colors are fine tuned and detailed to create a realistic and stunning image. This pattern is
+            perfect for anyone who loves the ocean and its many wonders.</p>
+        <button type="button" class="add-to-cart-btn" onclick="addToCart()">
+            Add to Cart $24.00
+        </button>
     </div>
+    <!-- Date & Time Display -->
+    <div id="datetime"></div>
+    <!-- Single Floating Cart Button in Bottom-Right Corner -->
+    <a href="../contact/checkout.html" class="floating-cart" title="View Cart">
+        <img src="../images/shopping.png" alt="Shopping Cart">
+        <span class="cart-badge" id="cart-badge">0</span>
+    </a>
+    <!-- Combined Scripts -->
+    <script>
+        // 1. Live Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const formatted = now.toLocaleDateString('en-US', options);
+            const dateElem = document.getElementById('datetime');
+            if (dateElem) {
+                dateElem.textContent = formatted;
+            }
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+        // 2. Shopping Cart Counter
+        let count = parseInt(localStorage.getItem('cartItemCount')) || 0;
+        
+        // Show saved count on page load
+        const badge = document.getElementById('cart-badge');
+        if (badge) {
+            badge.textContent = count;
+        }
+        function addToCart() {
+            count++;
+            
+            // Update badge on screen
+            if (badge) {
+                badge.textContent = count;
+            }
+            // Save to browser memory across all pattern pages
+            localStorage.setItem('cartItemCount', count);
+            
+            alert("Item added to cart! Total items: " + count);
+        }
+    </script>
 </body>
-
 </html>

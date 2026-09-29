@@ -122,3 +122,101 @@ a.home-link {
     transform: translateX(-3px); /* Gently slides left when hovered */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
+
+
+/*ADD TO CART BUTTON*/
+.add-to-cart-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;                   /* Space between icon, text, and price */
+    background-color: #46e9c5;   /* Button background color (forest green) */
+    color: #000000;              /* Text and icon color */
+    border: none;
+    border-radius: 25px;         /* Rounded pill style */
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
+}
+/* Hover effects */
+.add-to-cart-btn:hover {
+    background-color:#46e9c5;  /* Slightly darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+.add-to-cart-btn:active {
+    transform: translateY(0);    /* Presses down when clicked */
+}
+
+
+
+/*FLOATING CART BUTTON IN BOTTOM-RIGHT CORNER*/
+.floating-cart {
+    position: fixed;            /* Pins it to the screen even when you scroll */
+    bottom: 25px;               /* Distance from the bottom edge */
+    right: 25px;                /* Distance from the right edge */
+    width: 60px;                /* Size of the circle */
+    height: 60px;
+    background-color: #ffffff;  /* Background color behind the icon */
+    border-radius: 50%;         /* Makes it a perfect circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Shadow to float off the page */
+    text-decoration: none;
+    z-index: 1000;              /* Ensures it stays above all images and text */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* Sizing your cart picture */
+.floating-cart img {
+    width: 32px;                /* Adjust size of the cart picture */
+    height: auto;
+    display: block;
+}
+/* Hover effect */
+.floating-cart:hover {
+    transform: scale(1.1);      /* Gently pops out when hovered */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+/* Optional red notification badge for number of items */
+.cart-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: #d32f2f;  /* Red badge color */
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: sans-serif;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;  /* White outline */
+}
+
+
+
+
+
+/*DATE AND TIME API*/
+#datetime {
+  position: fixed;           /* Pins it to the screen */
+  bottom: 20px;              /* Distance from bottom */
+  left: 20px;                /* Distance from left */
+  
+  background-color:#46e9c5;
+  color: #020202;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;              /* Keeps it on top of images */
+  backdrop-filter: blur(4px); /* Modern frosted-glass blur */
+}

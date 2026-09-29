@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-image: url('../images/sakura.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            /* <-- Required to make the page full height */
+            margin: 0;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../styles/checkout.css">
+</head>
+
+<body>
+    <div class="stitch">
+        <!-- Home link on the RIGHT -->
+        <a href="/" class="home-link">Home</a>
+        <h1>STITCH AND BLOOM</h1>
+        <h3>BY:</h3>
+        <h2><i>Sariah Tanner</i></h2>
+    </div>
+
+    <form class="checkout-form" action="#" method="POST">
+        <h2>Checkout & Payment</h2>
+        <table class="payment-table">
+            <!-- First Name -->
+            <tr>
+                <td><label for="fname">First Name:</label></td>
+                <td>
+                    <input type="text" id="fname" name="firstname" placeholder="Jane" required>
+                </td>
+            </tr>
+            <!-- Last Name -->
+            <tr>
+                <td><label for="lname">Last Name:</label></td>
+                <td>
+                    <input type="text" id="lname" name="lastname" placeholder="Doe" required>
+                </td>
+            </tr>
+            <!-- Email -->
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td>
+                    <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                </td>
+            </tr>
+            <!-- Card Number -->
+            <tr>
+                <td><label for="card-num">Card Number:</label></td>
+                <td>
+                    <input type="text" id="card-num" name="cardnumber" placeholder="1234 5678 9101 1121" maxlength="19"
+                        required>
+                </td>
+            </tr>
+            <!-- Expiration Date -->
+            <tr>
+                <td><label for="exp-date">Expiration Date:</label></td>
+                <td>
+                    <input type="text" id="exp-date" name="expdate" placeholder="MM/YY" maxlength="5" required>
+                </td>
+            </tr>
+            <!-- CVV Code -->
+            <tr>
+                <td><label for="cvv">Security Code (CVV):</label></td>
+                <td>
+                    <input type="password" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                </td>
+            </tr>
+            <!-- Submit Button Row -->
+            <tr>
+                <td colspan="2" class="btn-cell">
+                    <button type="submit" class="submit-btn">Place Order</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

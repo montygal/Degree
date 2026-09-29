@@ -1,0 +1,128 @@
+/*DIFFERENT DISPLAY FOR MOBILE DEVICES*/
+@media screen and (max-width: 400px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .left {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .right {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+/* Card Container */
+.checkout-form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    font-family: sans-serif;
+}
+.checkout-form h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+/* Table Layout */
+.payment-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;      /* Adds breathing room between rows */
+}
+/* Labels */
+.payment-table td:first-child {
+    width: 35%;
+    font-weight: 600;
+    color: #444;
+}
+/* Input Fields */
+.payment-table input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;       /* Keeps inputs inside their table cell */
+    outline: none;
+    transition: border-color 0.2s;
+}
+.payment-table input:focus {
+    border-color: #2e7d32;        /* Highlight color when typing */
+    box-shadow: 0 0 4px rgba(46, 125, 50, 0.3);
+}
+/* Submit Button */
+.btn-cell {
+    text-align: center;
+    padding-top: 15px;
+}
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #2e7d32;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.submit-btn:hover {
+    background-color: #256628;
+}
+
+
+
+
+/*HEADER ON THE MAIN PAGE*/
+/* Container needed to position the dropdown content */
+/* 1. Ensure the green container is the anchor */
+.stitch {
+  position: relative;
+  text-align: center;
+  background-color: #46e9c5;
+  padding: 30px 20px;
+}
+/* 2. Position Home on the top-right */
+.home-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgba(221,68,132,0.918);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1.5px solid #ffffff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: rgba(221,68,132,0.918);
+  transition: all 0.2s ease;
+}
+
+a.home-link {
+    color: #ffffff;
+  }
+
+
+
+.home-link:hover {
+  background-color: #ffffff;
+  color: hsl(180, 24%, 93%);
+}

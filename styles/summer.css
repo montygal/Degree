@@ -113,3 +113,83 @@ figcaption {
   z-index: 999;              /* Keeps it on top of images */
   backdrop-filter: blur(4px); /* Modern frosted-glass blur */
 }
+
+
+
+
+
+
+/*FLOATING CART BUTTON IN BOTTOM-RIGHT CORNER*/
+.floating-cart {
+    position: fixed;            /* Pins it to the screen even when you scroll */
+    bottom: 25px;               /* Distance from the bottom edge */
+    right: 25px;                /* Distance from the right edge */
+    width: 60px;                /* Size of the circle */
+    height: 60px;
+    background-color: #ffffff;  /* Background color behind the icon */
+    border-radius: 50%;         /* Makes it a perfect circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Shadow to float off the page */
+    text-decoration: none;
+    z-index: 1000;              /* Ensures it stays above all images and text */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* Sizing your cart picture */
+.floating-cart img {
+    width: 32px;                /* Adjust size of the cart picture */
+    height: auto;
+    display: block;
+}
+/* Hover effect */
+.floating-cart:hover {
+    transform: scale(1.1);      /* Gently pops out when hovered */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+/* Optional red notification badge for number of items */
+.cart-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: #d32f2f;  /* Red badge color */
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: sans-serif;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;  /* White outline */
+}
+
+
+
+/*BACK BUTTON TO RETURN TO MAIN PAGE*/
+.back-home-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background-color: rgba(255, 255, 255, 0.9); /* Soft clean white */
+    color: #000000;                              /* Black text */
+    text-decoration: none;                       /* Removes underline */
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;                         /* Pill shape */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+    z-index: 100;
+}
+.back-home-btn:hover {
+    background-color: #ffffff;
+    transform: translateX(-4px);                 /* Slides slightly to the left on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}

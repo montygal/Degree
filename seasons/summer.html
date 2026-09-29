@@ -16,11 +16,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summer</title>
-    <link rel="stylesheet" href="../styles/summer.css">
+    <title>Spring</title>
+    <link rel="stylesheet" href="../styles/spring.css">
 </head>
 
 <body>
+    <!-- Back Button -->
+    <a href="../index.html" class="back-home-btn">&larr; Back</a>
     <div class="stitch">
         <!-- Home link on the RIGHT -->
         <a href="/" class="home-link">Home</a>
@@ -28,43 +30,70 @@
         <h3>BY:</h3>
         <h2><i>Sariah Tanner</i></h2>
     </div>
-    <div class="summer">
+    <div class="spring">
         <figure>
-             <a href="../patterns/beach.html">
-            <img src="../images/Oregon.jpg" alt="A picture of the beach in Oregon" width="400" height="300" />
+            <a href="../patterns/moth.html">
+                <img src="../images/Africa.jpg" alt="A picture of Africa in the Spring with a moth" width="400"
+                    height="300" />
             </a>
-            <figcaption>Oregon Beach</figcaption>
+            <figcaption>African Moth</figcaption>
         </figure>
         <figure>
-            <a href="../patterns/coast.html">
-            <img src="../images/Oregon2.jpg" alt="A picture of a sea lion cave in Oregon" width="400" height="300" />
+            <a href="../patterns/lemur.html">
+                <img src="../images/Africa2.jpg" alt="A picture of Africa in the Spring with a lemur" width="400"
+                    height="300" />
             </a>
-            <figcaption>Rocky Shore</figcaption>
+            <figcaption>African Lemur</figcaption>
         </figure>
     </div>
-        </div>
-       <div id="datetime"></div>
-<script>
-  function updateDateTime() {
-    const now = new Date();
-    // Format options (e.g., "Thursday, September 24, 2026, 9:30:15 PM")
-    const options = {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
-    };
-    const formatted = now.toLocaleDateString('en-US', options);
-    document.getElementById('datetime').textContent = formatted;
-  }
-  // Update immediately, then every 1 second
-  updateDateTime();
-  setInterval(updateDateTime, 1000);
-</script>
+    <!-- Date & Time Display -->
+    <div id="datetime"></div>
+    <!-- Single Floating Cart Button in Bottom-Right Corner -->
+    <a href="../contact/checkout.html" class="floating-cart" title="View Cart">
+        <img src="../images/shopping.png" alt="Shopping Cart">
+        <span class="cart-badge" id="cart-badge">0</span>
+    </a>
+    <!-- Cleaned Combined Script -->
+    <script>
+        // 1. Live Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const formatted = now.toLocaleDateString('en-US', options);
+            const dateElem = document.getElementById('datetime');
+            if (dateElem) {
+                dateElem.textContent = formatted;
+            }
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+        // 2. Shopping Cart Counter (reads saved count on page load)
+        let count = parseInt(localStorage.getItem('cartItemCount')) || 0;
+        const badge = document.getElementById('cart-badge');
+        if (badge) {
+            badge.textContent = count;
+        }
+        function addToCart() {
+            count++;
+
+            // Update badge on screen
+            if (badge) {
+                badge.textContent = count;
+            }
+            // Save to browser memory
+            localStorage.setItem('cartItemCount', count);
+
+            alert("Item added to cart! Total items: " + count);
+        }
+    </script>
 </body>
 
 </html>
-
