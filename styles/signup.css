@@ -104,3 +104,22 @@ body {
     font-size: 1.4rem;
     margin-bottom: 10px;
 }
+
+
+
+
+
+
+
+/* Red error text */
+.error-msg {
+    color: #e63946;
+    font-size: 0.85rem;
+    margin: 5px 0 0 0;
+    display: none; /* hidden until an error occurs */
+}
+/* Red border on the input box when invalid */
+.input-error {
+    border-color: #e63946 !important;
+    outline-color: #e63946;
+}

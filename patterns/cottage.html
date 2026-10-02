@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
         body {
@@ -18,6 +19,7 @@
     <title>English Cottage</title>
     <link rel="stylesheet" href="../styles/cottage.css">
 </head>
+
 <body>
     <!-- Back Button in Top-Left -->
     <a href="javascript:history.back()" class="back-btn">&larr; Back</a>
@@ -33,19 +35,23 @@
         <p>The British Isles are home to many beautiful cottages, each with their own unique charm and character.
             These cottages are often made of stone or brick, with thatched roofs and colorful gardens. Bring a
             piece of England to your home with this beautiful cross stitch created by Sariah Tanner.</p>
-      <button type="button" class="add-to-cart-btn"
+        <button type="button" class="add-to-cart-btn"
             onclick="addToCart('Cottage Pattern', 20.00, '../images/England.jpg')">
-             Add to Cart $20.00
+            Add to Cart $20.00
         </button>
     </div>
-    <!-- Date & Time Display -->
-    <div id="datetime"></div>
+        <!-- Pinned Log Out & Date/Time Container -->
+    <div class="bottom-datetime-container">
+       <a href="../setup/logout.html" class="floating-logout">Log Out</a>
+        <div id="datetime"></div>
+    </div>
+    <!-- Single Floa
     <!-- Single Floating Cart Button in Bottom-Right Corner -->
     <a href="../contact/checkout.html" class="floating-cart" title="View Cart">
         <img src="../images/shopping.png" alt="Shopping Cart">
         <span class="cart-badge" id="cart-badge">0</span>
     </a>
-   <!-- Combined Scripts -->
+    <!-- Combined Scripts -->
     <script>
         // 1. Live Date and Time
         function updateDateTime() {
@@ -84,10 +90,21 @@
             localStorage.setItem('stitchCart', JSON.stringify(cart));
             // 4. Update badge
             updateBadge();
-          
+
         }
         // Run once on page load to display initial count
         updateBadge();
+
+           // 3. Log Out Handler
+        function handleLogout(event) {
+            event.preventDefault();
+            localStorage.removeItem('loggedInUser');
+            alert("You have logged out.");
+            window.location.reload(); // Refreshes page as logged out
+        }
+
     </script>
+
 </body>
+
 </html>

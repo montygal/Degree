@@ -40,8 +40,12 @@
             Add to Cart $20.00
         </button>
     </div>
-    <!-- Date & Time Display -->
-    <div id="datetime"></div>
+       <!-- Pinned Log Out & Date/Time Container -->
+    <div class="bottom-datetime-container">
+       <a href="../setup/logout.html" class="floating-logout">Log Out</a>
+        <div id="datetime"></div>
+    </div>
+    <!-- Single Floa
     <!-- Single Floating Cart Button in Bottom-Right Corner -->
     <a href="../contact/checkout.html" class="floating-cart" title="View Cart">
         <img src="../images/shopping.png" alt="Shopping Cart">
@@ -87,10 +91,19 @@
             localStorage.setItem('stitchCart', JSON.stringify(cart));
             // 4. Update badge
             updateBadge();
-        
+
         }
         // Run once on page load to display initial count
         updateBadge();
+
+           // 3. Log Out Handler
+        function handleLogout(event) {
+            event.preventDefault();
+            localStorage.removeItem('loggedInUser');
+            alert("You have logged out.");
+            window.location.reload(); // Refreshes page as logged out
+        }
+
     </script>
 </body>
 

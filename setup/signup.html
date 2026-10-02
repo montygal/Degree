@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Create Account - Stitch and Bloom</title>
     <link rel="stylesheet" href="../styles/signup.css">
 </head>
+
 <body>
     <!-- Top Green Header -->
     <div class="stitch">
@@ -31,7 +33,11 @@
                 <div class="form-group">
                     <label for="new-password">Password:</label>
                     <input type="password" id="new-password" placeholder="Create a password" required>
+                    <!-- Error message text appears here -->
+                    <p id="password-error" class="error-msg"></p>
                 </div>
+
+
                 <button type="submit" class="submit-btn">Create Account</button>
             </form>
         </div>
@@ -48,16 +54,37 @@
     <script>
         document.getElementById('signup-form').addEventListener('submit', function (event) {
             event.preventDefault();
-            // 1. Get the username and password entered
             const username = document.getElementById('new-username').value.trim();
-            const password = document.getElementById('new-password').value;
-            // 2. Save account credentials to browser storage
+            const passwordInput = document.getElementById('new-password');
+            const password = passwordInput.value;
+            const errorText = document.getElementById('password-error');
+            // 1. Reset error state each time the user submits
+            errorText.style.display = 'none';
+            passwordInput.classList.remove('input-error');
+            // 2. Validate password
+            const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+            if (!passwordRegex.test(password)) {
+                // Display the error message and highlight the input red
+                errorText.textContent = "Must be at least 8 characters with at least 1 uppercase letter and 1 number.";
+                errorText.style.display = 'block';
+                passwordInput.classList.add('input-error');
+                passwordInput.focus();
+                return; // Stops here, will not create account
+            }
+            // 3. Save account credentials if valid
             localStorage.setItem('stitchAccount', JSON.stringify({ username: username, password: password }));
-            // 3. Hide the form and display the success message
+            // 4. Hide form and show success confirmation
             document.getElementById('signup-section').style.display = 'none';
             document.getElementById('display-username').textContent = username;
             document.getElementById('confirmation-section').style.display = 'block';
         });
+        // Optional: Clear the error automatically as soon as the user starts typing again
+        document.getElementById('new-password').addEventListener('input', function () {
+            document.getElementById('password-error').style.display = 'none';
+            this.classList.remove('input-error');
+        });
+
     </script>
 </body>
+
 </html>

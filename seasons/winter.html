@@ -44,14 +44,17 @@
             <figcaption>Norway Glacier</figcaption>
         </figure>
     </div>
-    <!-- Date & Time Display -->
-    <div id="datetime"></div>
+      <!-- Pinned Log Out & Date/Time Container -->
+    <div class="bottom-datetime-container">
+       <a href="../setup/logout.html" class="floating-logout">Log Out</a>
+        <div id="datetime"></div>
+    </div>
     <!-- Single Floating Cart Button in Bottom-Right Corner -->
     <a href="../contact/checkout.html" class="floating-cart" title="View Cart">
         <img src="../images/shopping.png" alt="Shopping Cart">
         <span class="cart-badge" id="cart-badge">0</span>
     </a>
-    <!-- Cleaned Combined Script -->
+   <!-- Cleaned Combined Script -->
     <script>
         // 1. Live Date and Time
         function updateDateTime() {
@@ -89,6 +92,14 @@
             // Save to browser memory
             localStorage.setItem('cartItemCount', count);
         }
+        // 3. Log Out Handler
+        function handleLogout(event) {
+            event.preventDefault();
+            localStorage.removeItem('loggedInUser');
+            alert("You have logged out.");
+            window.location.reload(); // Refreshes page as logged out
+        }
+
     </script>
 </body>
 
