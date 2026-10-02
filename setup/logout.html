@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logged Out - Stitch and Bloom</title>
     <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="stylesheet" href="../styles/logout.css">
 </head>
 <body>
     <!-- Top Green Header -->
@@ -15,36 +16,40 @@
         <h3>BY:</h3>
         <h2><i>Sariah Tanner</i></h2>
     </div>
-    <!-- Thank You Card -->
+     <!-- Thank You Card -->
     <div class="signup-card logout-card">
-        <h2>🌸 Logged Out</h2>
-        <!-- Personalized message -->
-        <p>Thank you for visiting, <b id="logout-username">friend</b>. Come again soon!</p>
+        <h2 id="logout-title">🌸 Logged Out</h2>
+        <p id="logout-message">Thank you for visiting, <b id="logout-username">friend</b>. Come again soon!</p>
         <div class="btn-group">
-            <a href="login.html" class="home-link">Log In Again</a>
+            <a href="login.html" class="home-link">Log In</a>
             <a href="../index.html" class="home-link">Return to Shop</a>
         </div>
     </div>
-    <script>
-        // 1. Get the username stored during signup/login
-        let username = "friend";
-        const savedAccount = localStorage.getItem('stitchAccount');
-        if (savedAccount) {
-            const account = JSON.parse(savedAccount);
-            if (account.username) {
-                username = account.username;
-            }
+     <script>
+        // Check if there is an active logged-in user
+        const user = localStorage.getItem('loggedInUser');
+        const titleElem = document.getElementById('logout-title');
+        const messageElem = document.getElementById('logout-message');
+        if (user) {
+            // 1. If someone IS logged in: show the thank you message
+            titleElem.textContent = "🌸 Logged Out";
+            messageElem.innerHTML = `Thank you for visiting, <b>${user}</b>. Come again soon!`;
+            
+            // Clear their login session
+            localStorage.removeItem('loggedInUser');
+            sessionStorage.clear();
+
+            // Empty the cart
+            localStorage.removeItem('stitchCart');
+            localStorage.removeItem('cartItemCount');
+        } else {
+            // 2. If NO ONE is logged in: show the warning message
+            titleElem.textContent = "⚠️ Not Logged In";
+            messageElem.textContent = "You are not logged in.";
         }
-        // Check if you use a 'currentUser' key for the active user
-        if (localStorage.getItem('currentUser')) {
-            username = localStorage.getItem('currentUser');
-        }
-        // 2. Put the username into the text
-        document.getElementById('logout-username').textContent = username;
-        // 3. Clear the active session
-        localStorage.removeItem('currentUser');
-        sessionStorage.clear();
     </script>
+
+  
 </body>
 </html>
 
