@@ -1,24 +1,123 @@
 /*DIFFERENT DISPLAY FOR MOBILE DEVICES*/
 @media screen and (max-width: 400px) {
-    .body {
-        display: flex;
-        flex-direction: column;
-    }
+  .body {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 400px) {
-    .left {
-        display: flex;
-        flex-direction: column;
-    }
+  .left {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 400px) {
-    .right {
-        display: flex;
-        flex-direction: column;
-    }
+  .right {
+    display: flex;
+    flex-direction: column;
+  }
 }
+
+
+/* Floating Bottom-Left Container (Log Out & Date/Time) */
+.bottom-datetime-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    z-index: 1000;
+}
+.floating-logout {
+    background-color: rgba(221, 68, 132, 0.918);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    cursor: pointer;
+    display: inline-block;
+     color: #ffffff;
+}
+.floating-logout:hover {
+    background-color:#ffffff;
+    transform: scale(1.05);
+    color:black;            
+}
+#datetime {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: sans-serif;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+/*HOME, LOGIN and SIGN UP LETTERS TURN BLACK WHEN HOVERED OVER*/
+
+
+.home-container .home-link:hover,
+.home-container .signup:hover,
+.home-container .login:hover {
+    background-color: #ffffff;
+    color: #000000; /* Changes words to black on hover */
+.home-link:hover {
+    color: #000000 !important; /* Turns words black on hover */
+}
+
+  
+}
+
+
+
+
+
+/* Container for sign-in */
+.top-nav-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Space around buttons and divider */
+  z-index: 100;
+}
+
+/* The divider bar */
+.auth-links {
+  color: #ffffff;
+  /* White bar (or use #000000 for black) */
+  font-size: 1.2rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* Matching button style for Sign Up, Log In, and Home */
+.signup,
+.login {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1.5px solid #ffffff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: rgba(221, 68, 132, 0.918);
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
 
 
 
@@ -34,25 +133,26 @@
   background-color: #46e9c5;
   padding: 30px 20px;
 }
+
 /* 2. Position Home on the top-right */
 .home-link {
   position: absolute;
   top: 20px;
   right: 20px;
-  color: rgba(221,68,132,0.918);
+  color: rgba(221, 68, 132, 0.918);
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
   border: 1.5px solid #ffffff;
   padding: 6px 14px;
   border-radius: 4px;
-  background-color: rgba(221,68,132,0.918);
+  background-color: rgba(221, 68, 132, 0.918);
   transition: all 0.2s ease;
 }
 
 a.home-link {
-    color: #ffffff;
-  }
+  color: #ffffff;
+}
 
 
 
@@ -60,13 +160,16 @@ a.home-link {
   background-color: #ffffff;
   color: hsl(180, 24%, 93%);
 }
+
 /* 3. Position Dropdown on the top-left */
 .dropdown {
   position: absolute;
   top: 20px;
-  left: 20px; /* <--- Puts the button on the left */
+  left: 20px;
+  /* <--- Puts the button on the left */
   display: inline-block;
 }
+
 /* Style the button to match the Home link */
 .dropbtn {
   background-color: rgba(221, 68, 132, 0.918);
@@ -79,22 +182,28 @@ a.home-link {
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 .dropbtn:hover {
   background-color: #ffffff;
   color: #2d5a27;
 }
+
 /* 4. Dropdown menu content */
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;       /* Appears right below the button */
-  left: 0;         /* Aligns with the left edge of the button */
+  top: 100%;
+  /* Appears right below the button */
+  left: 0;
+  /* Aligns with the left edge of the button */
   background-color: #ffffff;
   min-width: 150px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  z-index: 100;    /* Floats above images */
+  z-index: 100;
+  /* Floats above images */
 }
+
 .dropdown-content a {
   color: #333333;
   padding: 10px 14px;
@@ -102,10 +211,12 @@ a.home-link {
   display: block;
   text-align: left;
 }
+
 .dropdown-content a:hover {
   background-color: #f1f1f1;
   color: #2d5a27;
 }
+
 /* Show menu when hovering over the dropdown */
 .dropdown:hover .dropdown-content {
   display: block;
@@ -121,18 +232,28 @@ a.home-link {
 /*DISPLAY FOR 4 PICTURES ON THE MAIN PAGE*/
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 equal, wide columns */
-  gap: 24px;                             /* Space between images */
-  max-width: 1000px;                     /* Increase this to make them even bigger */
-  margin: 40px auto;                     /* Centers the grid on the page */
+  grid-template-columns: repeat(2, 1fr);
+  /* 2 equal, wide columns */
+  gap: 24px;
+  /* Space between images */
+  max-width: 1000px;
+  /* Increase this to make them even bigger */
+  margin: 40px auto;
+  /* Centers the grid on the page */
 }
+
 .image-grid a {
-  display: block;                        /* Ensures the link wraps the image cleanly */
+  display: block;
+  /* Ensures the link wraps the image cleanly */
 }
+
 .image-grid img {
-  width: 100%;                           /* Image expands to fill the column */
-  height: 300px;                         /* Uniform height */
-  object-fit: cover;                     /* Crops cleanly without stretching */
+  width: 100%;
+  /* Image expands to fill the column */
+  height: 300px;
+  /* Uniform height */
+  object-fit: cover;
+  /* Crops cleanly without stretching */
   border-radius: 8px;
 }
 
@@ -141,96 +262,113 @@ a.home-link {
 
 /* STYLE THE WORDS ON THE MAIN PAGE */
 .image-grid p {
-  margin-top: 10px;         /* Adds space between the image and words */
-  font-size: 18px;          /* Size of the text */
-  font-weight: bold;        /* Makes the text bold (optional) */
-  text-align: center;       /* Centers the text under the image */
+  margin-top: 10px;
+  /* Adds space between the image and words */
+  font-size: 18px;
+  /* Size of the text */
+  font-weight: bold;
+  /* Makes the text bold (optional) */
+  text-align: center;
+  /* Centers the text under the image */
 }
+
 /* Optional: change text color when hovering over the card */
 .image-grid a:hover p {
   color: #0077cc;
 }
 
 
-/*DATE AND TIME API*/
-#datetime {
-  position: fixed;           /* Pins it to the screen */
-  bottom: 20px;              /* Distance from bottom */
-  left: 20px;                /* Distance from left */
-  
-  background-color:#46e9c5;
-  color: #020202;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-family: sans-serif;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 999;              /* Keeps it on top of images */
-  backdrop-filter: blur(4px); /* Modern frosted-glass blur */
-}
 
 
 
 
 /*FLOATING CART BUTTON IN BOTTOM-RIGHT CORNER*/
 .floating-cart {
-    position: fixed;            /* Pins it to the screen even when you scroll */
-    bottom: 25px;               /* Distance from the bottom edge */
-    right: 25px;                /* Distance from the right edge */
-    width: 60px;                /* Size of the circle */
-    height: 60px;
-    background-color: #ffffff;  /* Background color behind the icon */
-    border-radius: 50%;         /* Makes it a perfect circle */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Shadow to float off the page */
-    text-decoration: none;
-    z-index: 1000;              /* Ensures it stays above all images and text */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: fixed;
+  /* Pins it to the screen even when you scroll */
+  bottom: 25px;
+  /* Distance from the bottom edge */
+  right: 25px;
+  /* Distance from the right edge */
+  width: 60px;
+  /* Size of the circle */
+  height: 60px;
+  background-color: #ffffff;
+  /* Background color behind the icon */
+  border-radius: 50%;
+  /* Makes it a perfect circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  /* Shadow to float off the page */
+  text-decoration: none;
+  z-index: 1000;
+  /* Ensures it stays above all images and text */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 /* Sizing your cart picture */
 .floating-cart img {
-    width: 32px;                /* Adjust size of the cart picture */
-    height: auto;
-    display: block;
+  width: 32px;
+  /* Adjust size of the cart picture */
+  height: auto;
+  display: block;
 }
+
 /* Hover effect */
 .floating-cart:hover {
-    transform: scale(1.1);      /* Gently pops out when hovered */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  transform: scale(1.1);
+  /* Gently pops out when hovered */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
+
 /* Optional red notification badge for number of items */
 .cart-badge {
-    position: absolute;
-    top: -2px;
-    right: -2px;
-    background-color: #d32f2f;  /* Red badge color */
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-    font-family: sans-serif;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #ffffff;  /* White outline */
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: #d32f2f;
+  /* Red badge color */
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: sans-serif;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  /* White outline */
 }
 
 
 /*NEEDLE AND THREAD IMAGE NEXT TO THE TITLE*/
 .author-name {
-    display: inline-flex;       /* Keeps text and image on the same line */
-    align-items: center;        /* Vertically centers the picture with the text */
-    justify-content: center;    /* Keeps everything centered */
-    gap: 10px;                  /* Space between "Sariah Tanner" and the image */
-}
-.author-img {
-    width: 28px;                /* Adjust size of the image */
-    height: 28px;
-    object-fit: contain;
-    display: inline-block;
+  display: inline-flex;
+  /* Keeps text and image on the same line */
+  align-items: center;
+  /* Vertically centers the picture with the text */
+  justify-content: center;
+  /* Keeps everything centered */
+  gap: 10px;
+  /* Space between "Sariah Tanner" and the image */
 }
 
+.author-img {
+  width: 28px;
+  /* Adjust size of the image */
+  height: 28px;
+  object-fit: contain;
+  display: inline-block;
+}
+
+
+.home-container .home-link:hover,
+.home-link:hover {
+    color: #000000 !important;
+}
+
+  

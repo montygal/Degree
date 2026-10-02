@@ -33,8 +33,9 @@
         <p>The British Isles are home to many beautiful cottages, each with their own unique charm and character.
             These cottages are often made of stone or brick, with thatched roofs and colorful gardens. Bring a
             piece of England to your home with this beautiful cross stitch created by Sariah Tanner.</p>
-        <button type="button" class="add-to-cart-btn" onclick="addToCart()">
-            Add to Cart $20.00
+      <button type="button" class="add-to-cart-btn"
+            onclick="addToCart('Cottage Pattern', 20.00, '../images/England.jpg')">
+             Add to Cart $20.00
         </button>
     </div>
     <!-- Date & Time Display -->
@@ -44,7 +45,7 @@
         <img src="../images/shopping.png" alt="Shopping Cart">
         <span class="cart-badge" id="cart-badge">0</span>
     </a>
-    <!-- Combined Scripts -->
+   <!-- Combined Scripts -->
     <script>
         // 1. Live Date and Time
         function updateDateTime() {
@@ -66,26 +67,27 @@
         }
         updateDateTime();
         setInterval(updateDateTime, 1000);
-        // 2. Shopping Cart Counter
-        let count = parseInt(localStorage.getItem('cartItemCount')) || 0;
-        
-        // Show saved count on page load
-        const badge = document.getElementById('cart-badge');
-        if (badge) {
-            badge.textContent = count;
-        }
-        function addToCart() {
-            count++;
-            
-            // Update badge on screen
+        // 2. Shopping Cart Functions
+        function updateBadge() {
+            const cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
+            const badge = document.getElementById('cart-badge');
             if (badge) {
-                badge.textContent = count;
+                badge.textContent = cart.length;
             }
-            // Save to browser memory across all pattern pages
-            localStorage.setItem('cartItemCount', count);
-            
-            alert("Item added to cart! Total items: " + count);
         }
+        function addToCart(title, price, image) {
+            // 1. Get existing cart or start empty
+            let cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
+            // 2. Add item details
+            cart.push({ title: title, price: price, image: image });
+            // 3. Save to browser memory
+            localStorage.setItem('stitchCart', JSON.stringify(cart));
+            // 4. Update badge
+            updateBadge();
+          
+        }
+        // Run once on page load to display initial count
+        updateBadge();
     </script>
 </body>
 </html>

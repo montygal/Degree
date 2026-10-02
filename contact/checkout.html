@@ -9,7 +9,6 @@
             background-position: center;
             background-repeat: no-repeat;
             min-height: 100vh;
-            /* <-- Required to make the page full height */
             margin: 0;
         }
     </style>
@@ -23,59 +22,51 @@
 <body>
     <div class="stitch">
         <!-- Home link on the RIGHT -->
-        <a href="/" class="home-link">Home</a>
+        <a href="../index.html" class="home-link">Home</a>
         <h1>STITCH AND BLOOM</h1>
         <h3>BY:</h3>
         <h2><i>Sariah Tanner</i></h2>
     </div>
-
+    <!-- 1. ORDER SUMMARY CARD WITH PICTURES & TOTAL -->
+    <div class="cart-summary-box">
+        <h2>Your Cart (<span id="cart-count">0</span> items)</h2>
+        <div id="cart-items-list">
+            <!-- Dynamic items with pictures will render here -->
+        </div>
+        <div class="cart-total-row">
+            <span>Total:</span>
+            <span id="order-total">$0.00</span>
+        </div>
+    </div>
+    <!-- 2. YOUR EXISTING CHECKOUT FORM -->
     <form class="checkout-form" action="#" method="POST">
         <h2>Checkout & Payment</h2>
         <table class="payment-table">
-            <!-- First Name -->
             <tr>
                 <td><label for="fname">First Name:</label></td>
-                <td>
-                    <input type="text" id="fname" name="firstname" placeholder="Jane" required>
-                </td>
+                <td><input type="text" id="fname" name="firstname" placeholder="Jane" required></td>
             </tr>
-            <!-- Last Name -->
             <tr>
                 <td><label for="lname">Last Name:</label></td>
-                <td>
-                    <input type="text" id="lname" name="lastname" placeholder="Doe" required>
-                </td>
+                <td><input type="text" id="lname" name="lastname" placeholder="Doe" required></td>
             </tr>
-            <!-- Email -->
             <tr>
                 <td><label for="email">Email:</label></td>
-                <td>
-                    <input type="email" id="email" name="email" placeholder="jane@example.com" required>
-                </td>
+                <td><input type="email" id="email" name="email" placeholder="jane@example.com" required></td>
             </tr>
-            <!-- Card Number -->
             <tr>
                 <td><label for="card-num">Card Number:</label></td>
-                <td>
-                    <input type="text" id="card-num" name="cardnumber" placeholder="1234 5678 9101 1121" maxlength="19"
-                        required>
-                </td>
+                <td><input type="text" id="card-num" name="cardnumber" placeholder="1234 5678 9101 1121" maxlength="19"
+                        required></td>
             </tr>
-            <!-- Expiration Date -->
             <tr>
                 <td><label for="exp-date">Expiration Date:</label></td>
-                <td>
-                    <input type="text" id="exp-date" name="expdate" placeholder="MM/YY" maxlength="5" required>
-                </td>
+                <td><input type="text" id="exp-date" name="expdate" placeholder="MM/YY" maxlength="5" required></td>
             </tr>
-            <!-- CVV Code -->
             <tr>
                 <td><label for="cvv">Security Code (CVV):</label></td>
-                <td>
-                    <input type="password" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
-                </td>
+                <td><input type="password" id="cvv" name="cvv" placeholder="123" maxlength="4" required></td>
             </tr>
-            <!-- Submit Button Row -->
             <tr>
                 <td colspan="2" class="btn-cell">
                     <button type="submit" class="submit-btn">Place Order</button>
@@ -83,6 +74,56 @@
             </tr>
         </table>
     </form>
+    <!-- 3. RENDER, DELETE, AND TOTAL RE-CALCULATION SCRIPT -->
+    <script>
+        let cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
+        function renderCart() {
+            const listElem = document.getElementById('cart-items-list');
+            const countElem = document.getElementById('cart-count');
+            const totalElem = document.getElementById('order-total');
+            // Update item count number
+            countElem.textContent = cart.length;
+            // Empty cart state
+            if (cart.length === 0) {
+                listElem.innerHTML = "<p style='text-align: center; color: #666;'>Your cart is empty.</p>";
+                totalElem.textContent = "$0.00";
+                return;
+            }
+            // Render each item with picture, title, price, and delete button
+            listElem.innerHTML = cart.map((item, index) => `
+                <div class="cart-item-row">
+                    <img src="${item.image}" alt="${item.title}" class="cart-thumb">
+                    <div class="cart-item-details">
+                        <h4>${item.title}</h4>
+                        <p class="cart-item-price">$${item.price.toFixed(2)}</p>
+                    </div>
+                    <button type="button" class="delete-btn" onclick="deleteItem(${index})">
+                        🗑️ Remove
+                    </button>
+                </div>
+            `).join('');
+            // Recalculate total
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            totalElem.textContent = `$${total.toFixed(2)}`;
+        }
+        function deleteItem(index) {
+            cart.splice(index, 1); // Remove item
+            localStorage.setItem('stitchCart', JSON.stringify(cart)); // Save update
+            renderCart(); // Re-render items, count, and total
+        }
+        renderCart();
+        document.querySelector('.checkout-form').addEventListener('submit', function (event) {
+            // 1. Prevent the page from just refreshing
+            event.preventDefault();
+            // 2. Grab the first name they entered
+            const firstName = document.getElementById('fname').value.trim();
+            // 3. Clear the cart since the order is complete
+            localStorage.removeItem('stitchCart');
+            localStorage.removeItem('cartItemCount');
+            // 4. Send them to the new confirmation page with their name attached to the URL
+            window.location.href = "confirmation.html?name=" + encodeURIComponent(firstName);
+        });
+    </script>
 </body>
 
 </html>

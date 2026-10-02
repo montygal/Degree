@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Stitch and Bloom</title>
+    <!-- Linked to your separate CSS file -->
+    <link rel="stylesheet" href="styles/welcome.css">
+</head>
+<body>
+    <!-- Top Green Header -->
+    <div class="stitch">
+        <!-- Dropdown on the LEFT -->
+        <div class="dropdown">
+            <button class="dropbtn">Cross-Stitches</button>
+            <div class="dropdown-content">
+                <a href="seasons/spring.html">Spring</a>
+                <a href="seasons/summer.html">Summer</a>
+                <a href="seasons/fall.html">Fall</a>
+                <a href="seasons/winter.html">Winter</a>
+            </div>
+        </div>
+        <!-- Log Out & Home buttons on the RIGHT -->
+        <div class="top-nav-right">
+            <a href="index.html" class="home-link" onclick="localStorage.removeItem('loggedInUser')">Log Out</a>
+            <a href="index.html" class="home-link">Home</a>
+        </div>
+        <!-- Centered Title with needle image -->
+        <h1 class="author-name">
+            STITCH AND BLOOM
+            <img src="images/needle.jpg" alt="a picture of a needle and thread" width="100px" height="100px" />
+        </h1>
+        <h3>BY:</h3>
+        <h2><i>Sariah Tanner</i></h2>
+    </div>
+    <!-- Member Welcome Banner -->
+    <div class="member-banner">
+        <h2>🎉 Welcome back, <span id="user-display">Member</span>!</h2>
+        <p>You are logged in. Explore your favorite seasonal patterns below!</p>
+    </div>
+    <!-- Seasons Grid -->
+    <div class="image-grid">
+        <a href="seasons/spring.html">
+            <img src="images/Spring.jpg" alt="A picture of Sakura trees in the Spring" />
+            <p><i>Spring</i></p>
+        </a>
+        <a href="seasons/summer.html">
+            <img src="images/Summer.jpg" alt="A picture of the beach in the summer" />
+            <p><i>Summer</i></p>
+        </a>
+        <a href="seasons/fall.html">
+            <img src="images/Fall.jpg" alt="A picture of trees turning colors in the fall">
+            <p><i>Fall</i></p>
+        </a>
+        <a href="seasons/winter.html">
+            <img src="images/Winter.jpg" alt="A picture of trees in the snow">
+            <p><i>Winter</i></p>
+        </a>
+    </div>
+    <!-- Live Clock Display -->
+    <div id="datetime"></div>
+    <!-- Floating Cart Button -->
+    <a href="contact/checkout.html" class="floating-cart" title="View Cart">
+        <img src="images/shopping.png" alt="Shopping Cart">
+        <span class="cart-badge" id="cart-badge">0</span>
+    </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Stitch and Bloom</title>
+    <!-- Linked to your separate CSS file -->
+    <link rel="stylesheet" href=..styles/welcome.css">
+</head>
+<body>
+    <!-- Top Green Header -->
+    <div class="stitch">
+        <!-- Log Out & Home buttons on the RIGHT -->
+        <div class="top-nav-right">
+            <a href="index.html" class="home-link" onclick="localStorage.removeItem('loggedInUser')">Log Out</a>
+            <a href="index.html" class="home-link">Home</a>
+        </div>
+        <!-- Centered Title with needle image -->
+        <h1 class="author-name">
+            STITCH AND BLOOM
+        </h1>
+        <h3>BY:</h3>
+        <h2><i>Sariah Tanner</i></h2>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Display logged-in username
+        const loggedInUser = localStorage.getItem('loggedInUser') || "Member";
+        document.getElementById('user-display').textContent = loggedInUser;
+        // 2. Update cart counter badge
+        const cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
+        const badge = document.getElementById('cart-badge');
+        if (badge) {
+            badge.textContent = cart.length;
+        }
+        // 3. Live clock
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const dateElem = document.getElementById('datetime');
+            if (dateElem) {
+                dateElem.textContent = now.toLocaleDateString('en-US', options);
+            }
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
+
+</body>
+</html>

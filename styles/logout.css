@@ -1,0 +1,60 @@
+/*DIFFERENT DISPLAY FOR MOBILE DEVICES*/
+@media screen and (max-width: 400px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .left {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .right {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+/* Floating Log Out Button */
+.floating-logout {
+    position: fixed;
+    bottom: 60px;       /* Sits directly above the datetime box */
+    right: 20px;        /* Align with your datetime alignment (right or left) */
+    background-color: #b84343; /* Soft red */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+    z-index: 999;       /* Keeps it floating above other elements */
+    cursor: pointer;
+    text-align: center;
+}
+.floating-logout:hover {
+    background-color: #963232;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+/* Example styling for #datetime to ensure proper spacing */
+#datetime {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 13px;
+    color: #555555;
+    z-index: 999;
+}

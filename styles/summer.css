@@ -66,7 +66,6 @@ a.home-link {
 
 
 
-
 /*CSS for pictures with captions*/
 body {
   margin: 0;
@@ -97,6 +96,7 @@ figcaption {
 
 
 
+
 /*DATE AND TIME API*/
 #datetime {
   position: fixed;           /* Pins it to the screen */
@@ -113,6 +113,9 @@ figcaption {
   z-index: 999;              /* Keeps it on top of images */
   backdrop-filter: blur(4px); /* Modern frosted-glass blur */
 }
+
+
+
 
 
 
@@ -165,7 +168,6 @@ figcaption {
     justify-content: center;
     border: 2px solid #ffffff;  /* White outline */
 }
-
 
 
 /*BACK BUTTON TO RETURN TO MAIN PAGE*/

@@ -23,6 +23,15 @@
 
 <body>
     <div class="stitch">
+        <!-- Right-side container with Home & Account links -->
+<div class="home-container">
+    <a href="../index.html" class="home-link">Home</a>
+    <div class="auth-links">
+        <a href="setup/signup.html" class="signup">Sign Up</a>
+        <a href="setup/login.html" class="login">Log In</a>
+    </div>
+</div>
+
         <!-- Dropdown button on the LEFT -->
         <div class="dropdown">
             <button class="dropbtn">Cross-Stitches</button>
@@ -62,8 +71,11 @@
             <p><i>Winter</i></p>
         </a>
     </div>
-    <!-- Date & Time Display -->
-    <div id="datetime"></div>
+    <!-- Pinned Log Out & Date/Time Container -->
+    <div class="bottom-datetime-container">
+        <a href="#" class="floating-logout" onclick="handleLogout(event)">Log Out</a>
+        <div id="datetime"></div>
+    </div>
     <!-- Single Floating Cart Button in Bottom-Right Corner -->
     <a href="contact/checkout.html" class="floating-cart" title="View Cart">
         <img src="../images/shopping.png" alt="Shopping Cart">
@@ -106,9 +118,15 @@
             }
             // Save to browser memory
             localStorage.setItem('cartItemCount', count);
-
-            alert("Item added to cart! Total items: " + count);
         }
+        // 3. Log Out Handler
+        function handleLogout(event) {
+            event.preventDefault();
+            localStorage.removeItem('loggedInUser');
+            alert("You have logged out.");
+            window.location.reload(); // Refreshes page as logged out
+        }
+
     </script>
 
 </body>

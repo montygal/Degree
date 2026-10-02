@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
         body {
@@ -18,6 +19,7 @@
     <title>Lemur</title>
     <link rel="stylesheet" href="../styles/lemur.css">
 </head>
+
 <body>
     <!-- Back Button in Top-Left -->
     <a href="javascript:history.back()" class="back-btn">&larr; Back</a>
@@ -34,7 +36,8 @@
             They are led, in groups, by females, who control access to food. They are one of the most
             endangered species on the planet. One of the most common types of lemurs is the indri.
             Another fun fact is that they are the world’s oldest living primates!</p>
-        <button type="button" class="add-to-cart-btn" onclick="addToCart()">
+        <button type="button" class="add-to-cart-btn"
+            onclick="addToCart('Lemur Pattern', 13.00, '../images/Africa2.jpg')">
             Add to Cart $13.00
         </button>
     </div>
@@ -67,26 +70,28 @@
         }
         updateDateTime();
         setInterval(updateDateTime, 1000);
-        // 2. Shopping Cart Counter
-        let count = parseInt(localStorage.getItem('cartItemCount')) || 0;
-        
-        // Show saved count on page load
-        const badge = document.getElementById('cart-badge');
-        if (badge) {
-            badge.textContent = count;
-        }
-        function addToCart() {
-            count++;
-            
-            // Update badge on screen
+        // 2. Shopping Cart Functions
+        function updateBadge() {
+            const cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
+            const badge = document.getElementById('cart-badge');
             if (badge) {
-                badge.textContent = count;
+                badge.textContent = cart.length;
             }
-            // Save to browser memory so count stays across both Moth and Lemur pages
-            localStorage.setItem('cartItemCount', count);
-            
-            alert("Item added to cart! Total items: " + count);
         }
+        function addToCart(title, price, image) {
+            // 1. Get existing cart or start empty
+            let cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
+            // 2. Add item details
+            cart.push({ title: title, price: price, image: image });
+            // 3. Save to browser memory
+            localStorage.setItem('stitchCart', JSON.stringify(cart));
+            // 4. Update badge
+            updateBadge();
+       
+        }
+        // Run once on page load to display initial count
+        updateBadge();
     </script>
 </body>
+
 </html>

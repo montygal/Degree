@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Stitch and Bloom</title>
+    <link rel="stylesheet" href="../styles/signup.css">
+</head>
+<body>
+    <!-- Top Green Header -->
+    <div class="stitch">
+        <!-- Links back to main home page -->
+        <a href="../index.html" class="home-link">Home</a>
+        <h1>STITCH AND BLOOM</h1>
+        <h3>BY:</h3>
+        <h2><i>Sariah Tanner</i></h2>
+    </div>
+    <!-- Sign-Up Box -->
+    <div class="signup-card">
+        <div id="signup-section">
+            <h2>Create an Account</h2>
+            <p>Choose a username and password to create your account!</p>
+            <form id="signup-form">
+                <!-- Username Field -->
+                <div class="form-group">
+                    <label for="new-username">Username:</label>
+                    <input type="text" id="new-username" placeholder="Choose a username" required>
+                </div>
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="new-password">Password:</label>
+                    <input type="password" id="new-password" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+        </div>
+        <!-- Success Confirmation (Appears after clicking Create Account) -->
+        <div id="confirmation-section" class="confirmation-box">
+            <h3>🎉 Account Created!</h3>
+            <p>Welcome, <b id="display-username"></b>! Your account has been created successfully.</p>
+            <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+                <a href="login.html" class="home-link" style="position: static;">Log In Now</a>
+                <a href="../index.html" class="home-link" style="position: static;">Return Home</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // 1. Get the username and password entered
+            const username = document.getElementById('new-username').value.trim();
+            const password = document.getElementById('new-password').value;
+            // 2. Save account credentials to browser storage
+            localStorage.setItem('stitchAccount', JSON.stringify({ username: username, password: password }));
+            // 3. Hide the form and display the success message
+            document.getElementById('signup-section').style.display = 'none';
+            document.getElementById('display-username').textContent = username;
+            document.getElementById('confirmation-section').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

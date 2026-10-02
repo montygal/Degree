@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - Stitch and Bloom</title>
+    <!-- Reuses your pink buttons and card layout from signup.css -->
+    <link rel="stylesheet" href="../styles/signup.css">
+</head>
+
+<body>
+    <!-- Top Green Header -->
+    <div class="stitch">
+        <a href="../index.html" class="home-link">Home</a>
+        <h1>STITCH AND BLOOM</h1>
+        <h3>BY:</h3>
+        <h2><i>Sariah Tanner</i></h2>
+    </div>
+    <!-- Login Card -->
+    <div class="signup-card">
+        <h2>Log In</h2>
+        <p>Please enter your username and password to log in.</p>
+        <!-- Red error message (hidden by default) -->
+        <p id="error-message"
+            style="color: #d32f2f; font-weight: bold; font-size: 0.95rem; display: none; margin-bottom: 16px;"></p>
+        <form id="login-form">
+            <!-- Username Input -->
+            <div class="form-group">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" placeholder="Enter your username" required>
+            </div>
+            <!-- Password Input -->
+            <div class="form-group">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="submit-btn">Log In Now</button>
+        </form>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: #555;">
+            Don't have an account yet?
+            <a href="signup.html"
+                style="color: rgba(221, 68, 132, 0.918); font-weight: bold; text-decoration: underline;">
+                Sign Up
+            </a>
+        </p>
+    </div>
+    <!-- Script that checks matching username & password -->
+    <script>
+ document.getElementById('login-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    
+    // Trim spaces and normalize username case
+    const usernameInput = document.getElementById('login-username').value.trim();
+    const passwordInput = document.getElementById('login-password').value.trim();
+    const errorElem = document.getElementById('error-message');
+    // 1. Get the account(s) stored in browser
+    const savedData = JSON.parse(localStorage.getItem('stitchAccount'));
+    if (!savedData) {
+        errorElem.textContent = "No account found! Please sign up first.";
+        errorElem.style.display = "block";
+        return;
+    }
+    // 2. Handle if stitchAccount is an array OR a single object
+    let match = false;
+    if (Array.isArray(savedData)) {
+        // If saved as a list of accounts
+        match = savedData.find(acc => 
+            acc.username.trim().toLowerCase() === usernameInput.toLowerCase() && 
+            acc.password === passwordInput
+        );
+    } else {
+        // If saved as a single account object
+        if (
+            savedData.username.trim().toLowerCase() === usernameInput.toLowerCase() && 
+            savedData.password === passwordInput
+        ) {
+            match = savedData;
+        }
+    }
+    // 3. Check login result
+    if (match) {
+        localStorage.setItem('loggedInUser', usernameInput);
+        alert("Login successful! Welcome back, " + usernameInput + "!");
+        window.location.href = "../index.html";
+    } else {
+        errorElem.textContent = "Incorrect username or password. Please try again.";
+        errorElem.style.display = "block";
+    }
+});
+
+  
+    </script>
+</body>
+
+</html>

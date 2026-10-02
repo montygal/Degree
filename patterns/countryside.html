@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
         body {
@@ -18,6 +19,7 @@
     <title>English Countryside</title>
     <link rel="stylesheet" href="../styles/countryside.css">
 </head>
+
 <body>
     <!-- Back Button in Top-Left -->
     <a href="javascript:history.back()" class="back-btn">&larr; Back</a>
@@ -33,7 +35,8 @@
         <p>The British countryside is famous for it's rolling hills, picturesque villages, and historic landmarks.
             It is a popular destination for tourists seeking a peaceful retreat from the hustle and bustle of city life.
             The countryside is also home to a variety of wildlife, including deer, foxes, and birds of prey.</p>
-        <button type="button" class="add-to-cart-btn" onclick="addToCart()">
+        <button type="button" class="add-to-cart-btn"
+            onclick="addToCart('Countryside Pattern', 20.00, '../images/England2.jpg')">
             Add to Cart $20.00
         </button>
     </div>
@@ -44,6 +47,7 @@
         <img src="../images/shopping.png" alt="Shopping Cart">
         <span class="cart-badge" id="cart-badge">0</span>
     </a>
+    <!-- Combined Scripts -->
     <!-- Combined Scripts -->
     <script>
         // 1. Live Date and Time
@@ -66,26 +70,28 @@
         }
         updateDateTime();
         setInterval(updateDateTime, 1000);
-        // 2. Shopping Cart Counter
-        let count = parseInt(localStorage.getItem('cartItemCount')) || 0;
-        
-        // Show saved count on page load
-        const badge = document.getElementById('cart-badge');
-        if (badge) {
-            badge.textContent = count;
-        }
-        function addToCart() {
-            count++;
-            
-            // Update badge on screen
+        // 2. Shopping Cart Functions
+        function updateBadge() {
+            const cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
+            const badge = document.getElementById('cart-badge');
             if (badge) {
-                badge.textContent = count;
+                badge.textContent = cart.length;
             }
-            // Save to browser memory across all pattern pages
-            localStorage.setItem('cartItemCount', count);
-            
-            alert("Item added to cart! Total items: " + count);
         }
+        function addToCart(title, price, image) {
+            // 1. Get existing cart or start empty
+            let cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
+            // 2. Add item details
+            cart.push({ title: title, price: price, image: image });
+            // 3. Save to browser memory
+            localStorage.setItem('stitchCart', JSON.stringify(cart));
+            // 4. Update badge
+            updateBadge();
+        
+        }
+        // Run once on page load to display initial count
+        updateBadge();
     </script>
 </body>
+
 </html>
