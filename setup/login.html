@@ -82,7 +82,7 @@
     // 3. Check login result
     if (match) {
         localStorage.setItem('loggedInUser', usernameInput);
-        alert("Login successful! Welcome back, " + usernameInput + "!");
+        // alert("Login successful! Welcome back, " + usernameInput + "!");
         window.location.href = "../index.html";
     } else {
         errorElem.textContent = "Incorrect username or password. Please try again.";
