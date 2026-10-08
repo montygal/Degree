@@ -111,16 +111,22 @@
             localStorage.setItem('stitchCart', JSON.stringify(cart)); // Save update
             renderCart(); // Re-render items, count, and total
         }
+        // Initial render on page load
         renderCart();
         document.querySelector('.checkout-form').addEventListener('submit', function (event) {
-            // 1. Prevent the page from just refreshing
             event.preventDefault();
-            // 2. Grab the first name they entered
+            // Optional: prevent checkout if cart is empty
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
             const firstName = document.getElementById('fname').value.trim();
-            // 3. Clear the cart since the order is complete
+            // 1. Save purchased items before clearing the cart
+            localStorage.setItem('purchasedItems', JSON.stringify(cart));
+            // 2. Clear the active cart
             localStorage.removeItem('stitchCart');
             localStorage.removeItem('cartItemCount');
-            // 4. Send them to the new confirmation page with their name attached to the URL
+            // 3. Redirect to confirmation page
             window.location.href = "confirmation.html?name=" + encodeURIComponent(firstName);
         });
     </script>
