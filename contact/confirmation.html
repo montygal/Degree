@@ -31,6 +31,7 @@
             line-height: 1.6;
             margin: 16px 0 28px 0;
         }
+        /* Buttons */
         .btn-home {
             display: inline-block;
             background-color: #46e9c5;
@@ -40,9 +41,23 @@
             padding: 12px 24px;
             border-radius: 8px;
             transition: background-color 0.2s ease;
+            margin-top: 10px;
         }
         .btn-home:hover {
             background-color: #38c4a4;
+        }
+        .btn-download {
+            display: inline-block;
+            background-color: #ff9e99;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+        .btn-download:hover {
+            background-color: #f78680;
         }
     </style>
     <meta charset="UTF-8">
@@ -58,19 +73,37 @@
         <h3>BY:</h3>
         <h2><i>Sariah Tanner</i></h2>
     </div>
-    <!-- Thank You Confirmation Box -->
+    <!-- Confirmation Card -->
     <div class="confirmation-card">
         <h2>🎉 Thank you for your order, <span id="first-name"></span>!</h2>
         <p>Your order has been received and is being prepared. We appreciate your support of Stitch and Bloom!</p>
+        
+        <!-- Purchased Pattern Downloads Container -->
+        <div id="downloads-list" style="margin-bottom: 20px;"></div>
+        
         <a href="../index.html" class="btn-home">Return to Home</a>
     </div>
-    <!-- Script to extract the name from the URL and display it -->
     <script>
-        // 1. Read the "?name=..." from the page URL
+        // 1. Display customer name from URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const name = urlParams.get('name') || "there";
-        // 2. Put the name into the <span> tag
         document.getElementById('first-name').textContent = name;
+        // 2. Render download buttons for purchased patterns
+        const purchased = JSON.parse(localStorage.getItem('purchasedItems')) || [];
+        const downloadsContainer = document.getElementById('downloads-list');
+        if (purchased.length > 0) {
+            downloadsContainer.innerHTML = '<h3>Your Downloads:</h3>' + purchased.map(item => {
+                // Converts image path (e.g., ../images/Oregon.jpg) to PDF path (../pdfs/Oregon.pdf)
+                const pdfPath = item.image.replace('/images/', '/pdfs/').replace(/\.(jpg|jpeg|png)$/i, '.pdf');
+                return `
+                    <div style="margin: 10px 0;">
+                        <a href="${pdfPath}" download class="btn-download">
+                            📥 Download ${item.title} (PDF)
+                        </a>
+                    </div>
+                `;
+            }).join('');
+        }
     </script>
 </body>
 </html>
