@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../styles/signup.css">
     <link rel="stylesheet" href="../styles/logout.css">
 </head>
+
 <body>
     <!-- Top Green Header -->
     <div class="stitch">
@@ -16,7 +18,7 @@
         <h3>BY:</h3>
         <h2><i>Sariah Tanner</i></h2>
     </div>
-     <!-- Thank You Card -->
+    <!-- Thank You Card -->
     <div class="signup-card logout-card">
         <h2 id="logout-title">🌸 Logged Out</h2>
         <p id="logout-message">Thank you for visiting, <b id="logout-username">friend</b>. Come again soon!</p>
@@ -25,7 +27,12 @@
             <a href="../index.html" class="home-link">Return to Shop</a>
         </div>
     </div>
-     <script>
+    <!--Footer-->
+    <footer>
+        <div class="footer">
+            &copy Sariah Tanner 2026</div>
+    </footer>
+    <script>
         // Check if there is an active logged-in user
         const user = localStorage.getItem('loggedInUser');
         const titleElem = document.getElementById('logout-title');
@@ -34,7 +41,7 @@
             // 1. If someone IS logged in: show the thank you message
             titleElem.textContent = "🌸 Logged Out";
             messageElem.innerHTML = `Thank you for visiting, <b>${user}</b>. Come again soon!`;
-            
+
             // Clear their login session
             localStorage.removeItem('loggedInUser');
             sessionStorage.clear();
@@ -49,8 +56,7 @@
         }
     </script>
 
-  
-</body>
-</html>
 
-  
+</body>
+
+</html>

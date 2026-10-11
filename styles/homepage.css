@@ -105,6 +105,10 @@ main .home-link:hover {
     color: #ffffff;
 }
 
-
+/*FOOTER*/
+.footer{
+  text-align: center;
+  color: black;
+}
 
 

@@ -242,3 +242,10 @@ figcaption {
 .home-link:hover {
     color: #000000 !important;
 }
+
+
+/*FOOTER*/
+.footer{
+  text-align: center;
+  color: black;
+}

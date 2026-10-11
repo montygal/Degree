@@ -1,3 +1,28 @@
+/*DIFFERENT DISPLAY FOR MOBILE DEVICES*/
+@media screen and (max-width: 400px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .left {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .right {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+
 body {
     background-image: url('../images/sakura.jpg');
     background-size: cover;
@@ -122,4 +147,12 @@ body {
 .input-error {
     border-color: #e63946 !important;
     outline-color: #e63946;
+}
+
+
+
+/*FOOTER*/
+.footer{
+  text-align: center;
+  color: black;
 }

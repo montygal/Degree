@@ -237,3 +237,11 @@ background-color: #46e9c5; /* Your site's theme green */
     border-color: #e63946 !important;
     outline-color: #e63946;
 }
+
+
+
+/*FOOTER*/
+.footer{
+  text-align: center;
+  color: black;
+}

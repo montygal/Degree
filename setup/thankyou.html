@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Stitch and Bloom</title>
+    <!-- Reuses your background, banner, and card styling -->
+    <link rel="stylesheet" href="../styles/thankyou.css">
+</head>
+<body>
+    <!-- Top Green Header / Banner -->
+    <div class="stitch">
+        <a href="../index.html" class="home-link">Home</a>
+        <h1>STITCH AND BLOOM</h1>
+        <h3>BY:</h3>
+        <h2><i>Sariah Tanner</i></h2>
+    </div>
+    <!-- Thank You Card (reuses signup-card) -->
+    <div class="signup-card" style="text-align: center;">
+        <h2>Thank You!</h2>
+        <h3 style="margin-top: 10px; color: #333;">
+            Welcome back, <span id="memberName" style="color: rgba(221, 68, 132, 0.918);">Member</span>!
+        </h3>
+        
+        <p style="margin: 20px 0;">
+            You have successfully logged in. Ready to explore our latest items?
+        </p>
+        <!-- Start Shopping button using your pink submit-btn style -->
+        <a href="../index.html" class="submit-btn" style="display: block; text-decoration: none; text-align: center; box-sizing: border-box;">
+            Start Shopping
+        </a>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            &copy; Sariah Tanner 2026
+        </div>
+    </footer>
+    <!-- Script that gets the logged-in username -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        let memberName = urlParams.get('name');
+        // Matches the 'loggedInUser' key saved by your login page
+        if (!memberName) {
+            memberName = localStorage.getItem('loggedInUser');
+        }
+        if (memberName) {
+            document.getElementById('memberName').textContent = memberName;
+        }
+    </script>
+</body>
+</html>
+
+  

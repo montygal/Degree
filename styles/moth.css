@@ -315,3 +315,11 @@ a.home-link {
     border-color: #e63946 !important;
     outline-color: #e63946;
 }
+
+
+
+/*FOOTER*/
+.footer{
+  text-align: center;
+  color: black;
+}
