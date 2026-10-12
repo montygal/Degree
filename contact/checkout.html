@@ -126,8 +126,11 @@
                 return;
             }
             const firstName = document.getElementById('fname').value.trim();
-            // 1. Save purchased items before clearing the cart
+            // 1. Save purchased items and customer name before clearing the cart
             localStorage.setItem('purchasedItems', JSON.stringify(cart));
+            if (firstName) {
+                localStorage.setItem('customerName', firstName);
+            }
             // 2. Clear the active cart
             localStorage.removeItem('stitchCart');
             localStorage.removeItem('cartItemCount');

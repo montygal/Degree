@@ -59,7 +59,6 @@
         .btn-download:hover {
             background-color: #f78680;
         }
-<<<<<<< HEAD
         .btn-download.disabled {
             background-color: #d1d5db;
             color: #6b7280;
@@ -67,8 +66,6 @@
             pointer-events: none;
             box-shadow: none;
         }
-=======
->>>>>>> f296dbdfc97ccea541c5a957fa1ea2219462b4b3
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,31 +83,23 @@
     <!-- Confirmation Card -->
     <div class="confirmation-card">
         <h2>🎉 Thank you for your order, <span id="first-name"></span>!</h2>
-<<<<<<< HEAD
         <p>Your order has been received and is ready for download. We appreciate your support of Stitch and Bloom!</p>
-=======
-        <p>Your order has been received and is being prepared. We appreciate your support of Stitch and Bloom!</p>
->>>>>>> f296dbdfc97ccea541c5a957fa1ea2219462b4b3
         
         <!-- Purchased Pattern Downloads Container -->
         <div id="downloads-list" style="margin-bottom: 20px;"></div>
         
         <a href="../index.html" class="btn-home">Return to Home</a>
     </div>
-<<<<<<< HEAD
        <!--Footer-->
     <footer>
         <div class="footer">
             &copy Sariah Tanner 2026</div>
     </footer>
-=======
->>>>>>> f296dbdfc97ccea541c5a957fa1ea2219462b4b3
     <script>
-        // 1. Display customer name from URL parameters
+        // 1. Display customer name from URL parameters or localStorage
         const urlParams = new URLSearchParams(window.location.search);
-        const name = urlParams.get('name') || "there";
+        const name = urlParams.get('name') || localStorage.getItem('customerName') || localStorage.getItem('loggedInUser') || "there";
         document.getElementById('first-name').textContent = name;
-<<<<<<< HEAD
 
         // 2. Handle one-time download click
         function handleOneTimeDownload(index, btnElement) {
@@ -128,8 +117,9 @@
                 btnElement.className = 'btn-download disabled';
                 btnElement.removeAttribute('href');
                 btnElement.removeAttribute('download');
+                btnElement.removeAttribute('onclick');
                 btnElement.textContent = '✓ Downloaded (1 of 1 Used)';
-            }, 100);
+            }, 500);
         }
 
         // 3. Render download buttons for purchased patterns
@@ -144,7 +134,8 @@
 
             downloadsContainer.innerHTML = '<h3 style="margin-bottom: 8px;">Your Downloads (One-Time Access):</h3>' + 
                 purchased.map((item, index) => {
-                    const pdfPath = item.image.replace('/images/', '/pdfs/').replace(/\.(jpg|jpeg|png)$/i, '.pdf');
+                    const filename = (item.image || '').split('/').pop().replace(/\.(jpg|jpeg|png)$/i, '.pdf');
+                    const pdfPath = '../pdfs/' + filename;
 
                     if (item.downloaded) {
                         return `
@@ -155,7 +146,7 @@
                     } else {
                         return `
                             <div style="margin: 10px 0;">
-                                <a href="${pdfPath}" download onclick="handleOneTimeDownload(${index}, this)" class="btn-download">
+                                <a href="${pdfPath}" download="${item.title}.pdf" target="_blank" onclick="handleOneTimeDownload(${index}, this)" class="btn-download">
                                     📥 Download ${item.title} (PDF)
                                 </a>
                             </div>
@@ -165,24 +156,6 @@
         }
 
         renderDownloads();
-=======
-        // 2. Render download buttons for purchased patterns
-        const purchased = JSON.parse(localStorage.getItem('purchasedItems')) || [];
-        const downloadsContainer = document.getElementById('downloads-list');
-        if (purchased.length > 0) {
-            downloadsContainer.innerHTML = '<h3>Your Downloads:</h3>' + purchased.map(item => {
-                // Converts image path (e.g., ../images/Oregon.jpg) to PDF path (../pdfs/Oregon.pdf)
-                const pdfPath = item.image.replace('/images/', '/pdfs/').replace(/\.(jpg|jpeg|png)$/i, '.pdf');
-                return `
-                    <div style="margin: 10px 0;">
-                        <a href="${pdfPath}" download class="btn-download">
-                            📥 Download ${item.title} (PDF)
-                        </a>
-                    </div>
-                `;
-            }).join('');
-        }
->>>>>>> f296dbdfc97ccea541c5a957fa1ea2219462b4b3
     </script>
 </body>
 </html>
