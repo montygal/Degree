@@ -22,7 +22,7 @@
 
 
 /*CENTER THE PICTURE AND THE PARAGRAPH*/
-.glacier {
+.pictures {
     display: flex;
     align-items: center;         /* Aligns image and text vertically in the middle */
     justify-content: center;    /* Centers everything horizontally */
@@ -31,7 +31,7 @@
     margin: 40px auto;           /* Centers the entire box on the page */
     padding: 20px;
 }
-.glacier p {
+.pictures p {
     max-width: 450px;            /* Keeps paragraph lines easy to read */
     font-size: 1.1rem;
     line-height: 1.6;
@@ -41,12 +41,12 @@
 
 
 /*DISPLAY TEXT AND IMAGE SIDE BY SIDE*/
-.glacier {
+.pictures {
     display: flex;
     align-items: center; /* Vertically centers the text with the image (use 'flex-start' to align to the top) */
     gap: 20px;           /* Adds space between the image and the paragraph */
 }
-.glacier img {
+.pictures img {
     max-width: 50%;      /* Prevents the image from taking up the entire width */
     height: auto;
 }
@@ -124,10 +124,6 @@ a.home-link {
 }
 
 
-
-
-
-
 /*ADD TO CART BUTTON*/
 .add-to-cart-btn {
     display: inline-flex;
@@ -154,9 +150,6 @@ a.home-link {
 .add-to-cart-btn:active {
     transform: translateY(0);    /* Presses down when clicked */
 }
-
-
-
 
 
 
@@ -254,18 +247,23 @@ a.home-link {
 
 
 
-/* Red error text */
-.error-msg {
-    color: #e63946;
-    font-size: 0.85rem;
-    margin: 5px 0 0 0;
-    display: none; /* hidden until an error occurs */
+/*HOME, LOGIN and SIGN UP LETTERS TURN BLACK WHEN HOVERED OVER*/
+
+
+.home-container .home-link:hover,
+.home-container .signup:hover,
+.home-container .login:hover {
+    background-color: #ffffff;
+    color: #000000; /* Changes words to black on hover */
+.home-link:hover {
+    color: #000000 !important; /* Turns words black on hover */
 }
-/* Red border on the input box when invalid */
-.input-error {
-    border-color: #e63946 !important;
-    outline-color: #e63946;
+
+  
 }
+
+
+
 
 
 
@@ -298,6 +296,26 @@ a.home-link {
     transform: translateX(-4px);                 /* Slides slightly to the left on hover */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
+
+
+
+
+
+
+
+/* Red error text */
+.error-msg {
+    color: #e63946;
+    font-size: 0.85rem;
+    margin: 5px 0 0 0;
+    display: none; /* hidden until an error occurs */
+}
+/* Red border on the input box when invalid */
+.input-error {
+    border-color: #e63946 !important;
+    outline-color: #e63946;
+}
+
 
 
 /*FOOTER*/
