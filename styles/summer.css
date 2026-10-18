@@ -98,13 +98,26 @@ a.home-link {
 body {
   margin: 0;
 }
+
 .summer {
-  display: flex;
-  justify-content: center; /* Centers everything horizontally */
-  align-items: center;     /* Centers everything vertically */
-  min-height: 100vh;
-  gap: 24px;               /* Space between the two cards */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 5px;      /* Controls the vertical gap between top and bottom rows */
+    column-gap: 20px;  /* Controls the horizontal gap between left and right pictures */
+    max-width: 900px;
+    margin: 10px auto;
+    justify-items: center;
 }
+.summer figure {
+    margin: 0;
+    text-align: center;                    /* Centers the caption & price under the image */
+}
+
+.stitch {
+    margin-bottom: 60px; /* Increase this number (e.g., 80px, 100px) for a larger gap */
+}
+
+
 figure {
   margin: 0;               /* Removes default browser margin on <figure> */
   text-align: center;      /* Centers the text under the image */
