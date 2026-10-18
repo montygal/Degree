@@ -52,6 +52,32 @@
   transition: all 0.2s ease;
 }
 
+/* Reduce padding on the banner itself */
+.stitch {
+    padding: 8px 20px; /* Top/Bottom 8px, Left/Right 20px */
+}
+/* Remove bulky default margins on the headings inside .stitch */
+.stitch h1, 
+.stitch h2, 
+.stitch h3 {
+    margin: 2px 0;
+    line-height: 1.2;
+}
+/* Optional: Put "BY:" and "Sariah Tanner" on the same line to save vertical space */
+.stitch h3, 
+.stitch h2 {
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0 4px;
+}
+/* Shrink the needle image so it doesn't stretch the header height */
+.stitch .author-name img {
+    width: 45px;
+    height: 45px;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
 a.home-link {
     color: #ffffff;
   }
