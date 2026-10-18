@@ -36,23 +36,15 @@
     font-size: 1.1rem;
     line-height: 1.6;
 }
-
-
-
-
-/*DISPLAY TEXT AND IMAGE SIDE BY SIDE*/
-.pictures {
-    display: flex;
-    align-items: center; /* Vertically centers the text with the image (use 'flex-start' to align to the top) */
-    gap: 20px;           /* Adds space between the image and the paragraph */
-}
 .pictures img {
-    max-width: 50%;      /* Prevents the image from taking up the entire width */
-    height: auto;
+    border: 8px solid rgba(221, 68, 132, 0.918); /* Your site's pink color */
+    outline: 3px solid #ffffff;                  /* White outer trim */
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 
-
+  
 
 /*HEADER ON THE MAIN PAGE*/
 /* Container needed to position the dropdown content */
@@ -225,10 +217,6 @@ a.home-link {
 }
 
 
-
-
-
-
 /* Floating Bottom-Left Container (Log Out & Date/Time) */
 .bottom-datetime-container {
     position: fixed;
@@ -272,29 +260,17 @@ a.home-link {
 
 
 /*HOME, LOGIN and SIGN UP LETTERS TURN BLACK WHEN HOVERED OVER*/
-
-
 .home-container .home-link:hover,
 .home-container .signup:hover,
 .home-container .login:hover {
     background-color: #ffffff;
     color: #000000; /* Changes words to black on hover */
+}
 .home-link:hover {
     color: #000000 !important; /* Turns words black on hover */
 }
 
   
-}
-
-
-
-
-
-
-
-
-
-
 /*BACK BUTTON TO RETURN TO SEASONS PAGE*/
 .back-home-btn {
     position: absolute;
@@ -322,11 +298,6 @@ a.home-link {
 }
 
 
-
-
-
-
-
 /* Red error text */
 .error-msg {
     color: #e63946;
@@ -339,6 +310,8 @@ a.home-link {
     border-color: #e63946 !important;
     outline-color: #e63946;
 }
+
+
 
 
 
