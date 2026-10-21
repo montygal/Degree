@@ -12,6 +12,13 @@
             /* <-- Required to make the page full height */
             margin: 0;
         }
+
+        .pictures img {
+            border: 8px solid rgba(221, 68, 132, 0.918);
+            outline: 3px solid #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +28,7 @@
 </head>
 
 <body>
-         <!-- Back Button -->
+    <!-- Back Button -->
     <a href="../seasons/winter.html" class="back-home-btn">&larr; Back</a>
     <div class="stitch">
         <!-- Home link on the RIGHT -->
@@ -35,14 +42,14 @@
         <p>A stunning glacier in Norway, perfect for showcasing the beauty of nature. People travel from all over the
             world to see this magnificent sight.
             Turn this breathtaking view into a cross stitch pattern to bring a piece of Norway into your home.</p>
-   <button type="button" class="add-to-cart-btn"
+        <button type="button" class="add-to-cart-btn"
             onclick="addToCart('Glacier Pattern', 23.00, '../images/Norway.jpg')">
             Add to Cart $23.00
         </button>
     </div>
-     <!-- Pinned Log Out & Date/Time Container -->
+    <!-- Pinned Log Out & Date/Time Container -->
     <div class="bottom-datetime-container">
-       <a href="../setup/logout.html" class="floating-logout">Log Out</a>
+        <a href="../setup/logout.html" class="floating-logout">Log Out</a>
         <div id="datetime"></div>
     </div>
     <!-- Single Floating Cart Button in Bottom-Right Corner -->
@@ -50,7 +57,7 @@
         <img src="../images/shopping.png" alt="Shopping Cart">
         <span class="cart-badge" id="cart-badge">0</span>
     </a>
-       <!--Footer-->
+    <!--Footer-->
     <footer>
         <div class="footer">
             &copy Sariah Tanner 2026</div>
@@ -94,12 +101,12 @@
             localStorage.setItem('stitchCart', JSON.stringify(cart));
             // 4. Update badge
             updateBadge();
-         
+
         }
         // Run once on page load to display initial count
         updateBadge();
 
-           // 3. Log Out Handler
+        // 3. Log Out Handler
         function handleLogout(event) {
             event.preventDefault();
             localStorage.removeItem('loggedInUser');

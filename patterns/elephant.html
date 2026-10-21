@@ -11,6 +11,13 @@
             min-height: 100vh;
             margin: 0;
         }
+
+        .pictures img {
+            border: 8px solid rgba(221, 68, 132, 0.918);
+            outline: 3px solid #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +27,7 @@
 </head>
 
 <body>
-      <!-- Back Button -->
+    <!-- Back Button -->
     <a href="../seasons/spring.html" class="back-home-btn">&larr; Back</a>
     <div class="stitch">
         <!-- Home link on the RIGHT -->
@@ -31,8 +38,10 @@
     </div>
     <div class="pictures">
         <img src="../images/Africa4.jpg" alt="A picture of an African elephant" width="400" height="300">
-        <p>The African elephant is the largest land mammal on Earth. They are known for their intelligence, social behavior, 
-            and distinctive features like their large ears and long trunk. Here is a cross stitch displaying it's grand features and
+        <p>The African elephant is the largest land mammal on Earth. They are known for their intelligence, social
+            behavior,
+            and distinctive features like their large ears and long trunk. Here is a cross stitch displaying it's grand
+            features and
             majestic beauty. A grand addition to your stitching collection!</p>
 
         <!-- Fixed: Added button text back -->
@@ -41,9 +50,9 @@
             Add to Cart $15.00
         </button>
     </div>
-      <!-- Pinned Log Out & Date/Time Container -->
+    <!-- Pinned Log Out & Date/Time Container -->
     <div class="bottom-datetime-container">
-       <a href="../setup/logout.html" class="floating-logout">Log Out</a>
+        <a href="../setup/logout.html" class="floating-logout">Log Out</a>
         <div id="datetime"></div>
     </div>
     <!-- Single Floa
@@ -52,7 +61,7 @@
         <img src="../images/shopping.png" alt="Shopping Cart">
         <span class="cart-badge" id="cart-badge">0</span>
     </a>
-       <!--Footer-->
+    <!--Footer-->
     <footer>
         <div class="footer">
             &copy Sariah Tanner 2026</div>
@@ -101,7 +110,7 @@
         // Run once on page load to display initial count
         updateBadge();
 
-           // 3. Log Out Handler
+        // 3. Log Out Handler
         function handleLogout(event) {
             event.preventDefault();
             localStorage.removeItem('loggedInUser');
