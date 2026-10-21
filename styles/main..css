@@ -60,7 +60,10 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-
+.image-grid img {
+    border: 7px solid rgba(35, 184, 147, 0.918); /* thickness, style, and color */
+    border-radius: 8px;     
+}
 
 
 /*HOME, LOGIN and SIGN UP LETTERS TURN BLACK WHEN HOVERED OVER*/

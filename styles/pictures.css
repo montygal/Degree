@@ -36,12 +36,6 @@
     font-size: 1.1rem;
     line-height: 1.6;
 }
-.pictures img {
-    border: 8px solid rgba(221, 68, 132, 0.918); /* Your site's pink color */
-    outline: 3px solid #ffffff;                  /* White outer trim */
-    border-radius: 6px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
 
 
   
