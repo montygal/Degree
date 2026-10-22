@@ -35,6 +35,8 @@
   text-align: center;
   background-color: #46e9c5;
   padding: 30px 20px;
+  border: 6px solid rgba(221, 68, 132, 0.918);
+  border-radius: 8px;
 }
 /* 2. Position Home on the top-right */
 .home-link {

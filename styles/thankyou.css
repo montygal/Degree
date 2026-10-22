@@ -33,11 +33,16 @@ body {
     font-family: sans-serif;
 }
 /* Green Header Banner */
+/*HEADER ON THE MAIN PAGE*/
+/* Container needed to position the dropdown content */
+/* 1. Ensure the green container is the anchor */
 .stitch {
-    position: relative;
-    text-align: center;
-    background-color: #46e9c5;
-    padding: 30px 20px;
+  position: relative;
+  text-align: center;
+  background-color: #46e9c5;
+  padding: 30px 20px;
+  border: 6px solid rgba(221, 68, 132, 0.918);
+  border-radius: 8px;
 }
 
 .home-link {
