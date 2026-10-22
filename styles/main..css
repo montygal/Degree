@@ -21,115 +21,11 @@
 }
 
 
-/* Floating Bottom-Left Container (Log Out & Date/Time) */
-.bottom-datetime-container {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    z-index: 1000;
-}
-.floating-logout {
-    background-color: rgba(221, 68, 132, 0.918);
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 6px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    cursor: pointer;
-    display: inline-block;
-     color: #ffffff;
-}
-.floating-logout:hover {
-    background-color:#ffffff;
-    transform: scale(1.05);
-    color:black;            
-}
-#datetime {
-    background-color: #46e9c5; /* Your site's theme green */
-    color: #000000;             /* Black text so it's readable */
-    font-size: 12px;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-family: sans-serif;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.image-grid img {
-    border: 7px solid rgba(35, 184, 147, 0.918); /* thickness, style, and color */
-    border-radius: 8px;     
-}
-
-
-/*HOME, LOGIN and SIGN UP LETTERS TURN BLACK WHEN HOVERED OVER*/
-
-
-.home-container .home-link:hover,
-.home-container .signup:hover,
-.home-container .login:hover {
-    background-color: #ffffff;
-    color: #000000; /* Changes words to black on hover */
-.home-link:hover {
-    color: #000000 !important; /* Turns words black on hover */
-}
-
-  
-}
-
-
-
-
-
-/* Container for sign-in */
-.top-nav-right {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  /* Space around buttons and divider */
-  z-index: 100;
-}
-
-/* The divider bar */
-.auth-links {
-  color: #ffffff;
-  /* White bar (or use #000000 for black) */
-  font-size: 1.2rem;
-  font-weight: bold;
-  user-select: none;
-}
-
-/* Matching button style for Sign Up, Log In, and Home */
-.signup,
-.login {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  border: 1.5px solid #ffffff;
-  padding: 6px 14px;
-  border-radius: 4px;
-  background-color: rgba(221, 68, 132, 0.918);
-  transition: all 0.2s ease;
-  display: inline-block;
-}
-
-
-
 
 
 
 
 /*HEADER ON THE MAIN PAGE*/
-/* Container needed to position the dropdown content */
-/* 1. Ensure the green container is the anchor */
 .stitch {
   position: relative;
   text-align: center;
@@ -138,24 +34,6 @@
   border: 6px solid rgba(221, 68, 132, 0.918);
   border-radius: 8px;
 }
-
-/* 2. Position Home on the top-right */
-.home-link {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: rgba(221, 68, 132, 0.918);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  border: 1.5px solid #ffffff;
-  padding: 6px 14px;
-  border-radius: 4px;
-  background-color: rgba(221, 68, 132, 0.918);
-  transition: all 0.2s ease;
-}
-
-
 
 /* Remove bulky default margins on the headings inside .stitch */
 .stitch h1, 
@@ -178,12 +56,28 @@
     margin-left: 8px;
 }
 
+.home-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgba(221, 68, 132, 0.918);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1.5px solid #ffffff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: rgba(221, 68, 132, 0.918);
+  transition: all 0.2s ease;
+}
 
 
 
-
-
-
+/*FORCING THE HOME FLOAT LETTERS BLACK*/
+.home-container .home-link:hover,
+.home-link:hover {
+    color: #000000 !important;
+}
 
 
 a.home-link {
@@ -262,6 +156,129 @@ a.home-link {
 
 
 
+/*NEEDLE AND THREAD IMAGE NEXT TO THE TITLE*/
+.author-name {
+  display: inline-flex;
+  /* Keeps text and image on the same line */
+  align-items: center;
+  /* Vertically centers the picture with the text */
+  justify-content: center;
+  /* Keeps everything centered */
+  gap: 10px;
+  /* Space between "Sariah Tanner" and the image */
+}
+
+.author-img {
+  width: 28px;
+  /* Adjust size of the image */
+  height: 28px;
+  object-fit: contain;
+  display: inline-block;
+}
+
+
+
+
+/*HOME, LOGIN and SIGN UP LETTERS TURN BLACK WHEN HOVERED OVER*/
+.home-container .home-link:hover,
+.home-container .signup:hover,
+.home-container .login:hover {
+    background-color: #ffffff;
+    color: #000000; /* Changes words to black on hover */
+.home-link:hover {
+    color: #000000 !important; /* Turns words black on hover */
+}
+
+  
+}
+/* Container for sign-in */
+.top-nav-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Space around buttons and divider */
+  z-index: 100;
+}
+
+/* The divider bar */
+.auth-links {
+  color: #ffffff;
+  /* White bar (or use #000000 for black) */
+  font-size: 1.2rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* Matching button style for Sign Up, Log In, and Home */
+.signup,
+.login {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1.5px solid #ffffff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: rgba(221, 68, 132, 0.918);
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+
+
+
+
+
+/* Floating Bottom-Left Container (Log Out & Date/Time) */
+.bottom-datetime-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    z-index: 1000;
+}
+.floating-logout {
+    background-color: rgba(221, 68, 132, 0.918);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    cursor: pointer;
+    display: inline-block;
+     color: #ffffff;
+}
+.floating-logout:hover {
+    background-color:#ffffff;
+    transform: scale(1.05);
+    color:black;            
+}
+#datetime {
+    background-color: #46e9c5; /* Your site's theme green */
+    color: #000000;             /* Black text so it's readable */
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: sans-serif;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.image-grid img {
+    border: 7px solid rgba(35, 184, 147, 0.918); /* thickness, style, and color */
+    border-radius: 8px;     
+}
+
+
+
+
 
 
 /*DISPLAY FOR 4 PICTURES ON THE MAIN PAGE*/
@@ -311,6 +328,9 @@ a.home-link {
 .image-grid a:hover p {
   color: #0077cc;
 }
+
+
+
 
 
 
@@ -380,35 +400,8 @@ a.home-link {
 }
 
 
-/*NEEDLE AND THREAD IMAGE NEXT TO THE TITLE*/
-.author-name {
-  display: inline-flex;
-  /* Keeps text and image on the same line */
-  align-items: center;
-  /* Vertically centers the picture with the text */
-  justify-content: center;
-  /* Keeps everything centered */
-  gap: 10px;
-  /* Space between "Sariah Tanner" and the image */
-}
-
-.author-img {
-  width: 28px;
-  /* Adjust size of the image */
-  height: 28px;
-  object-fit: contain;
-  display: inline-block;
-}
 
 
-
-
-
-/*FORCING THE HOME FLOAT LETTERS BLACK*/
-.home-container .home-link:hover,
-.home-link:hover {
-    color: #000000 !important;
-}
 
   
 

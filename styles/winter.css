@@ -25,6 +25,8 @@
 
 
 
+
+
 /*HEADER ON THE MAIN PAGE*/
 /* Container needed to position the dropdown content */
 /* 1. Ensure the green container is the anchor */
@@ -35,7 +37,31 @@
   padding: 30px 20px;
   border: 6px solid rgba(221, 68, 132, 0.918);
   border-radius: 8px;
+  margin-bottom: 60px; /* Increase this number (e.g., 80px, 100px) for a larger gap */
 }
+/* Remove bulky default margins on the headings inside .stitch */
+.stitch h1, 
+.stitch h2, 
+.stitch h3 {
+    margin: 2px 0;
+    line-height: 1.2;
+}
+/* Optional: Put "BY:" and "Sariah Tanner" on the same line to save vertical space */
+.stitch h3, 
+.stitch h2 {
+    display: inline-block;
+    font-size: 1rem;
+}
+/* Shrink the needle image so it doesn't stretch the header height */
+.stitch .author-name img {
+    width: 45px;
+    height: 45px;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+
+
 /* 2. Position Home on the top-right */
 .home-link {
   position: absolute;
@@ -52,34 +78,6 @@
   transition: all 0.2s ease;
 }
 
-
-
-
-/* Reduce padding on the banner itself */
-.stitch {
-    padding: 8px 20px; /* Top/Bottom 8px, Left/Right 20px */
-}
-/* Remove bulky default margins on the headings inside .stitch */
-.stitch h1, 
-.stitch h2, 
-.stitch h3 {
-    margin: 2px 0;
-    line-height: 1.2;
-}
-/* Optional: Put "BY:" and "Sariah Tanner" on the same line to save vertical space */
-.stitch h3, 
-.stitch h2 {
-    display: inline-block;
-    font-size: 1rem;
-    margin: 0 4px;
-}
-/* Shrink the needle image so it doesn't stretch the header height */
-.stitch .author-name img {
-    width: 45px;
-    height: 45px;
-    vertical-align: middle;
-    margin-left: 8px;
-}
 a.home-link {
     color: #ffffff;
   }
@@ -102,7 +100,6 @@ body {
   margin: 0;
 }
 
-
 .winter {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -117,9 +114,6 @@ body {
     text-align: center;                    /* Centers the caption & price under the image */
 }
 
-.stitch {
-    margin-bottom: 60px; /* Increase this number (e.g., 80px, 100px) for a larger gap */
-}
 
 figure {
   margin: 0;               /* Removes default browser margin on <figure> */
@@ -198,6 +192,7 @@ figcaption {
 }
 
 
+
 /*FLOATING CART BUTTON IN BOTTOM-RIGHT CORNER*/
 .floating-cart {
     position: fixed;            /* Pins it to the screen even when you scroll */
@@ -272,16 +267,6 @@ figcaption {
     background-color: #ffffff;
     transform: translateX(-4px);                 /* Slides slightly to the left on hover */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-
-
-
-
-/*FORCING THE HOME FLOAT LETTERS BLACK*/
-.home-container .home-link:hover,
-.home-link:hover {
-    color: #000000 !important;
 }
 
 
