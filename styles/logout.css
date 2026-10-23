@@ -29,9 +29,12 @@
 /* Floating Log Out Button */
 .floating-logout {
     position: fixed;
-    bottom: 60px;       /* Sits directly above the datetime box */
-    right: 20px;        /* Align with your datetime alignment (right or left) */
-    background-color: #b84343; /* Soft red */
+    bottom: 60px;
+    /* Sits directly above the datetime box */
+    right: 20px;
+    /* Align with your datetime alignment (right or left) */
+    background-color: #b84343;
+    /* Soft red */
     color: #ffffff;
     text-decoration: none;
     font-size: 13px;
@@ -40,15 +43,18 @@
     border-radius: 20px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease;
-    z-index: 999;       /* Keeps it floating above other elements */
+    z-index: 999;
+    /* Keeps it floating above other elements */
     cursor: pointer;
     text-align: center;
 }
+
 .floating-logout:hover {
     background-color: #963232;
     transform: translateY(-2px);
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
 }
+
 /* Example styling for #datetime to ensure proper spacing */
 #datetime {
     position: fixed;
@@ -74,9 +80,11 @@
     margin: 6px 0 0 0;
     display: none;
 }
+
 .input-error {
     border: 1.5px solid #d90429 !important;
 }
+
 /* --- Action Link Containers --- */
 .btn-group {
     display: flex;
@@ -84,23 +92,26 @@
     justify-content: center;
     margin-top: 20px;
 }
+
 .btn-group .home-link {
     position: static;
 }
+
 /* --- Logout / Thank You Page --- */
 .logout-card {
     text-align: center;
     padding: 30px;
 }
+
 .logout-card h2 {
     margin-bottom: 10px;
     color: #2b463c;
 }
 
-  
+
 
 /*FOOTER*/
-.footer{
-  text-align: center;
-  color: black;
+.footer {
+    text-align: center;
+    color: black;
 }

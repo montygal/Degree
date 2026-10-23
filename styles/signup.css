@@ -32,17 +32,22 @@ body {
     margin: 0;
     font-family: sans-serif;
 }
+
+
+
 /*HEADER ON THE MAIN PAGE*/
 /* Container needed to position the dropdown content */
 /* 1. Ensure the green container is the anchor */
 .stitch {
-  position: relative;
-  text-align: center;
-  background-color: #46e9c5;
-  padding: 30px 20px;
-  border: 6px solid rgba(221, 68, 132, 0.918);
-  border-radius: 8px;
+    position: relative;
+    text-align: center;
+    background-color: #46e9c5;
+    padding: 30px 20px;
+    border: 6px solid rgba(221, 68, 132, 0.918);
+    border-radius: 8px;
 }
+
+
 
 .home-link {
     position: absolute;
@@ -58,10 +63,15 @@ body {
     background-color: rgba(221, 68, 132, 0.918);
     transition: all 0.2s ease;
 }
+
 .home-link:hover {
     background-color: #ffffff;
     color: rgba(221, 68, 132, 0.918);
 }
+
+
+
+
 /* White Sign-Up Card */
 .signup-card {
     max-width: 420px;
@@ -72,21 +82,28 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     text-align: center;
 }
+
 .signup-card h2 {
     margin-top: 0;
     color: #222;
     font-size: 1.6rem;
 }
+
 .signup-card p {
     color: #666;
     font-size: 0.95rem;
     margin-bottom: 24px;
 }
+
+
+
+
 /* Input Rows */
 .form-group {
     text-align: left;
     margin-bottom: 18px;
 }
+
 .form-group label {
     display: block;
     margin-bottom: 6px;
@@ -94,6 +111,7 @@ body {
     color: #444;
     font-size: 0.9rem;
 }
+
 .form-group input {
     width: 100%;
     padding: 10px 12px;
@@ -104,15 +122,20 @@ body {
     outline: none;
     transition: border-color 0.2s;
 }
+
 .form-group input:focus {
     border-color: #2e7d32;
     box-shadow: 0 0 5px rgba(46, 125, 50, 0.3);
 }
+
+
+
 /* Pink Sign Up Button */
 .submit-btn {
     width: 100%;
     padding: 12px;
-    background-color: rgba(221, 68, 132, 0.918);   /* 🌸 Your signature pink */
+    background-color: rgba(221, 68, 132, 0.918);
+    /* 🌸 Your signature pink */
     color: #ffffff;
     border: 1.5px solid rgba(221, 68, 132, 0.918);
     border-radius: 8px;
@@ -128,6 +151,7 @@ body {
 .confirmation-box {
     display: none;
 }
+
 .confirmation-box h3 {
     color: #2e7d32;
     font-size: 1.4rem;
@@ -136,17 +160,15 @@ body {
 
 
 
-
-
-
-
 /* Red error text */
 .error-msg {
     color: #e63946;
     font-size: 0.85rem;
     margin: 5px 0 0 0;
-    display: none; /* hidden until an error occurs */
+    display: none;
+    /* hidden until an error occurs */
 }
+
 /* Red border on the input box when invalid */
 .input-error {
     border-color: #e63946 !important;
@@ -156,7 +178,7 @@ body {
 
 
 /*FOOTER*/
-.footer{
-  text-align: center;
-  color: black;
+.footer {
+    text-align: center;
+    color: black;
 }

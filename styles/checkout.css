@@ -23,6 +23,50 @@
 
 
 
+/*HEADER ON THE MAIN PAGE*/
+/* Container needed to position the dropdown content */
+/* 1. Ensure the green container is the anchor */
+.stitch {
+    position: relative;
+    text-align: center;
+    background-color: #46e9c5;
+    padding: 30px 20px;
+}
+
+/* 2. Position Home on the top-right */
+.home-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: rgba(221, 68, 132, 0.918);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 1.5px solid #ffffff;
+    padding: 6px 14px;
+    border-radius: 4px;
+    background-color: rgba(221, 68, 132, 0.918);
+    transition: all 0.2s ease;
+}
+
+a.home-link {
+    color: #ffffff;
+}
+
+
+
+.home-link:hover {
+    background-color: #ffffff;
+    color: hsl(180, 24%, 93%);
+}
+
+
+
+
+
+
+
+
 
 /* Card Container */
 .checkout-form {
@@ -34,24 +78,29 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     font-family: sans-serif;
 }
+
 .checkout-form h2 {
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;
     color: #333;
 }
+
 /* Table Layout */
 .payment-table {
     width: 100%;
     border-collapse: separate;
-    border-spacing: 0 12px;      /* Adds breathing room between rows */
+    border-spacing: 0 12px;
+    /* Adds breathing room between rows */
 }
+
 /* Labels */
 .payment-table td:first-child {
     width: 35%;
     font-weight: 600;
     color: #444;
 }
+
 /* Input Fields */
 .payment-table input {
     width: 100%;
@@ -59,19 +108,24 @@
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 15px;
-    box-sizing: border-box;       /* Keeps inputs inside their table cell */
+    box-sizing: border-box;
+    /* Keeps inputs inside their table cell */
     outline: none;
     transition: border-color 0.2s;
 }
+
 .payment-table input:focus {
-    border-color: #2e7d32;        /* Highlight color when typing */
+    border-color: #2e7d32;
+    /* Highlight color when typing */
     box-shadow: 0 0 4px rgba(46, 125, 50, 0.3);
 }
+
 /* Submit Button */
 .btn-cell {
     text-align: center;
     padding-top: 15px;
 }
+
 .submit-btn {
     width: 100%;
     padding: 12px;
@@ -84,48 +138,13 @@
     cursor: pointer;
     transition: background-color 0.2s;
 }
+
 .submit-btn:hover {
     background-color: #256628;
 }
 
 
 
-
-/*HEADER ON THE MAIN PAGE*/
-/* Container needed to position the dropdown content */
-/* 1. Ensure the green container is the anchor */
-.stitch {
-  position: relative;
-  text-align: center;
-  background-color: #46e9c5;
-  padding: 30px 20px;
-}
-/* 2. Position Home on the top-right */
-.home-link {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: rgba(221,68,132,0.918);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  border: 1.5px solid #ffffff;
-  padding: 6px 14px;
-  border-radius: 4px;
-  background-color: rgba(221,68,132,0.918);
-  transition: all 0.2s ease;
-}
-
-a.home-link {
-    color: #ffffff;
-  }
-
-
-
-.home-link:hover {
-  background-color: #ffffff;
-  color: hsl(180, 24%, 93%);
-}
 
 
 
@@ -141,12 +160,14 @@ a.home-link {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     font-family: sans-serif;
 }
+
 .cart-summary-box h2 {
     margin-top: 0;
     margin-bottom: 16px;
     color: #333;
     text-align: center;
 }
+
 /* Individual Cart Item */
 .cart-item-row {
     display: flex;
@@ -155,9 +176,11 @@ a.home-link {
     padding: 12px 0;
     border-bottom: 1px solid #e0e0e0;
 }
+
 .cart-item-row:last-child {
     border-bottom: none;
 }
+
 .cart-thumb {
     width: 65px;
     height: 65px;
@@ -165,19 +188,27 @@ a.home-link {
     border-radius: 8px;
     border: 1px solid #ddd;
 }
+
 .cart-item-details {
     flex: 1;
 }
+
 .cart-item-details h4 {
     margin: 0 0 4px 0;
     color: #222;
     font-size: 1rem;
 }
+
 .cart-item-price {
     margin: 0;
     color: #2e7d32;
     font-weight: 600;
 }
+
+
+
+
+
 /* Delete Button */
 .delete-btn {
     background: #ffebee;
@@ -190,10 +221,12 @@ a.home-link {
     font-weight: 600;
     transition: background 0.2s;
 }
+
 .delete-btn:hover {
     background: #e53935;
     color: #fff;
 }
+
 /* Total Row */
 .cart-total-row {
     display: flex;
@@ -209,7 +242,7 @@ a.home-link {
 
 
 /*FOOTER*/
-.footer{
-  text-align: center;
-  color: black;
+.footer {
+    text-align: center;
+    color: black;
 }

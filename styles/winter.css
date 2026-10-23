@@ -31,27 +31,31 @@
 /* Container needed to position the dropdown content */
 /* 1. Ensure the green container is the anchor */
 .stitch {
-  position: relative;
-  text-align: center;
-  background-color: #46e9c5;
-  padding: 30px 20px;
-  border: 6px solid rgba(221, 68, 132, 0.918);
-  border-radius: 8px;
-  margin-bottom: 60px; /* Increase this number (e.g., 80px, 100px) for a larger gap */
+    position: relative;
+    text-align: center;
+    background-color: #46e9c5;
+    padding: 30px 20px;
+    border: 6px solid rgba(221, 68, 132, 0.918);
+    border-radius: 8px;
+    margin-bottom: 60px;
+    /* Increase this number (e.g., 80px, 100px) for a larger gap */
 }
+
 /* Remove bulky default margins on the headings inside .stitch */
-.stitch h1, 
-.stitch h2, 
+.stitch h1,
+.stitch h2,
 .stitch h3 {
     margin: 2px 0;
     line-height: 1.2;
 }
+
 /* Optional: Put "BY:" and "Sariah Tanner" on the same line to save vertical space */
-.stitch h3, 
+.stitch h3,
 .stitch h2 {
     display: inline-block;
     font-size: 1rem;
 }
+
 /* Shrink the needle image so it doesn't stretch the header height */
 .stitch .author-name img {
     width: 45px;
@@ -64,73 +68,82 @@
 
 /* 2. Position Home on the top-right */
 .home-link {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: rgba(221,68,132,0.918);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  border: 1.5px solid #ffffff;
-  padding: 6px 14px;
-  border-radius: 4px;
-  background-color: rgba(221,68,132,0.918);
-  transition: all 0.2s ease;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: rgba(221, 68, 132, 0.918);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 1.5px solid #ffffff;
+    padding: 6px 14px;
+    border-radius: 4px;
+    background-color: rgba(221, 68, 132, 0.918);
+    transition: all 0.2s ease;
 }
 
 a.home-link {
     color: #ffffff;
-  }
-
-
-
-.home-link:hover {
-  background-color: #ffffff;
-  color: hsl(180, 24%, 93%);
 }
 
 
-
+.home-link:hover {
+    background-color: #ffffff;
+    color: hsl(180, 24%, 93%);
+}
 
 
 
 
 /*CSS for pictures with captions*/
 body {
-  margin: 0;
+    margin: 0;
 }
 
 .winter {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 5px;      /* Controls the vertical gap between top and bottom rows */
-    column-gap: 20px;  /* Controls the horizontal gap between left and right pictures */
+    row-gap: 5px;
+    /* Controls the vertical gap between top and bottom rows */
+    column-gap: 20px;
+    /* Controls the horizontal gap between left and right pictures */
     max-width: 900px;
     margin: 10px auto;
     justify-items: center;
 }
+
 .winter figure {
     margin: 0;
-    text-align: center;                    /* Centers the caption & price under the image */
+    text-align: center;
+    /* Centers the caption & price under the image */
 }
 
 
 figure {
-  margin: 0;               /* Removes default browser margin on <figure> */
-  text-align: center;      /* Centers the text under the image */
+    margin: 0;
+    /* Removes default browser margin on <figure> */
+    text-align: center;
+    /* Centers the text under the image */
 }
+
 figure img {
-  max-width: 40vw;         /* Keeps images responsive */
-  height: auto;
-  display: block;          /* Removes extra space below inline images */
-  border-radius: 8px;      /* Optional: rounded corners */
+    max-width: 40vw;
+    /* Keeps images responsive */
+    height: auto;
+    display: block;
+    /* Removes extra space below inline images */
+    border-radius: 8px;
+    /* Optional: rounded corners */
 }
+
 figcaption {
-  margin-top: 10px;        /* Spacing between image and caption */
-  font-family: sans-serif;
-  font-size: 16px;
-  color: #333;
+    margin-top: 10px;
+    /* Spacing between image and caption */
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #333;
 }
+
 
 
 
@@ -145,6 +158,7 @@ figcaption {
     gap: 8px;
     z-index: 1000;
 }
+
 .floating-logout {
     background-color: rgba(221, 68, 132, 0.918);
     text-decoration: none;
@@ -156,16 +170,20 @@ figcaption {
     transition: background-color 0.2s ease, transform 0.1s ease;
     cursor: pointer;
     display: inline-block;
-     color: #ffffff;
+    color: #ffffff;
 }
+
 .floating-logout:hover {
-    background-color:#ffffff;
+    background-color: #ffffff;
     transform: scale(1.05);
-    color:black;            
+    color: black;
 }
+
 #datetime {
-    background-color: #46e9c5; /* Your site's theme green */
-    color: #000000;             /* Black text so it's readable */
+    background-color: #46e9c5;
+    /* Your site's theme green */
+    color: #000000;
+    /* Black text so it's readable */
     font-size: 12px;
     padding: 6px 12px;
     border-radius: 4px;
@@ -177,56 +195,71 @@ figcaption {
 
 
 /*HOME, LOGIN and SIGN UP LETTERS TURN BLACK WHEN HOVERED OVER*/
-
-
 .home-container .home-link:hover,
 .home-container .signup:hover,
 .home-container .login:hover {
     background-color: #ffffff;
-    color: #000000; /* Changes words to black on hover */
-.home-link:hover {
-    color: #000000 !important; /* Turns words black on hover */
-}
+    color: #000000;
 
-  
+    /* Changes words to black on hover */
+    .home-link:hover {
+        color: #000000 !important;
+        /* Turns words black on hover */
+    }
+
+
 }
 
 
 
 /*FLOATING CART BUTTON IN BOTTOM-RIGHT CORNER*/
 .floating-cart {
-    position: fixed;            /* Pins it to the screen even when you scroll */
-    bottom: 25px;               /* Distance from the bottom edge */
-    right: 25px;                /* Distance from the right edge */
-    width: 60px;                /* Size of the circle */
+    position: fixed;
+    /* Pins it to the screen even when you scroll */
+    bottom: 25px;
+    /* Distance from the bottom edge */
+    right: 25px;
+    /* Distance from the right edge */
+    width: 60px;
+    /* Size of the circle */
     height: 60px;
-    background-color: #ffffff;  /* Background color behind the icon */
-    border-radius: 50%;         /* Makes it a perfect circle */
+    background-color: #ffffff;
+    /* Background color behind the icon */
+    border-radius: 50%;
+    /* Makes it a perfect circle */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Shadow to float off the page */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    /* Shadow to float off the page */
     text-decoration: none;
-    z-index: 1000;              /* Ensures it stays above all images and text */
+    z-index: 1000;
+    /* Ensures it stays above all images and text */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 /* Sizing your cart picture */
 .floating-cart img {
-    width: 32px;                /* Adjust size of the cart picture */
+    width: 32px;
+    /* Adjust size of the cart picture */
     height: auto;
     display: block;
 }
+
 /* Hover effect */
 .floating-cart:hover {
-    transform: scale(1.1);      /* Gently pops out when hovered */
+    transform: scale(1.1);
+    /* Gently pops out when hovered */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
+
 /* Optional red notification badge for number of items */
 .cart-badge {
     position: absolute;
     top: -2px;
     right: -2px;
-    background-color: #d32f2f;  /* Red badge color */
+    background-color: #d32f2f;
+    /* Red badge color */
     color: #ffffff;
     font-size: 12px;
     font-weight: bold;
@@ -237,7 +270,8 @@ figcaption {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #ffffff;  /* White outline */
+    border: 2px solid #ffffff;
+    /* White outline */
 }
 
 
@@ -252,32 +286,33 @@ figcaption {
     align-items: center;
     gap: 8px;
     padding: 8px 18px;
-    background-color: rgba(255, 255, 255, 0.9); /* Soft clean white */
-    color: #000000;                              /* Black text */
-    text-decoration: none;                       /* Removes underline */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Soft clean white */
+    color: #000000;
+    /* Black text */
+    text-decoration: none;
+    /* Removes underline */
     font-family: sans-serif;
     font-size: 14px;
     font-weight: 600;
-    border-radius: 20px;                         /* Pill shape */
+    border-radius: 20px;
+    /* Pill shape */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     transition: all 0.2s ease;
     z-index: 100;
 }
+
 .back-home-btn:hover {
     background-color: #ffffff;
-    transform: translateX(-4px);                 /* Slides slightly to the left on hover */
+    transform: translateX(-4px);
+    /* Slides slightly to the left on hover */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 
 
 /*FOOTER*/
-.footer{
-  text-align: center;
-  color: black;
+.footer {
+    text-align: center;
+    color: black;
 }
-
-
- 
-
-  

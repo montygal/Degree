@@ -36,21 +36,25 @@ body {
     background-color: #fcfbf7;
     color: #333333;
 }
+
 /* Green Header Banner */
 .stitch {
-    background-color: #3b6e4c; /* Soft stitch-green */
+    background-color: #3b6e4c;
+    /* Soft stitch-green */
     color: #ffffff;
     text-align: center;
     padding: 30px 20px 20px;
     position: relative;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
+
 /* Top-Right Navigation Container */
 .top-nav-right {
     position: absolute;
     top: 15px;
     right: 20px;
 }
+
 /* Header Home Link Button */
 .stitch .home-link {
     color: #ffffff;
@@ -62,32 +66,38 @@ body {
     font-size: 14px;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
+
 .stitch .home-link:hover {
     background-color: #ffffff;
     color: #3b6e4c;
 }
+
 /* Titles and Author */
 .stitch .author-name {
     margin: 10px 0 5px;
     font-size: 2rem;
     letter-spacing: 2px;
 }
+
 .stitch h3 {
     margin: 6px 0 2px;
     font-size: 0.9rem;
     font-weight: 400;
     opacity: 0.85;
 }
+
 .stitch h2 {
     margin: 0;
     font-size: 1.2rem;
     font-weight: 300;
 }
+
 /* Main Content Area */
 main {
     padding: 40px 20px;
     text-align: center;
 }
+
 /* Main Body Return Link */
 main .home-link {
     display: inline-block;
@@ -100,15 +110,14 @@ main .home-link {
     border-radius: 6px;
     transition: all 0.2s ease;
 }
+
 main .home-link:hover {
     background-color: #3b6e4c;
     color: #ffffff;
 }
 
 /*FOOTER*/
-.footer{
-  text-align: center;
-  color: black;
+.footer {
+    text-align: center;
+    color: black;
 }
-
-

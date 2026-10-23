@@ -24,61 +24,54 @@
 /*CENTER THE PICTURE AND THE PARAGRAPH*/
 .pictures {
     display: flex;
-    align-items: center;         /* Aligns image and text vertically in the middle */
-    justify-content: center;    /* Centers everything horizontally */
-    gap: 30px;                   /* Space between the image and paragraph */
-    max-width: 900px;            /* Prevents the block from stretching too wide */
-    margin: 40px auto;           /* Centers the entire box on the page */
+    align-items: center;
+    /* Aligns image and text vertically in the middle */
+    justify-content: center;
+    /* Centers everything horizontally */
+    gap: 30px;
+    /* Space between the image and paragraph */
+    max-width: 900px;
+    /* Prevents the block from stretching too wide */
+    margin: 40px auto;
+    /* Centers the entire box on the page */
     padding: 20px;
 }
+
 .pictures p {
-    max-width: 450px;            /* Keeps paragraph lines easy to read */
+    max-width: 450px;
+    /* Keeps paragraph lines easy to read */
     font-size: 1.1rem;
     line-height: 1.6;
 }
+
 /*HEADER ON THE MAIN PAGE*/
 /* Container needed to position the dropdown content */
 /* 1. Ensure the green container is the anchor */
 .stitch {
-  position: relative;
-  text-align: center;
-  background-color: #46e9c5;
-  padding: 30px 20px;
-  border: 6px solid rgba(221, 68, 132, 0.918);
-  border-radius: 8px;
+    position: relative;
+    text-align: center;
+    background-color: #46e9c5;
+    padding: 30px 20px;
+    border: 6px solid rgba(221, 68, 132, 0.918);
+    border-radius: 8px;
 }
-/* 2. Position Home on the top-right */
-.home-link {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: rgba(221,68,132,0.918);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  border: 1.5px solid #ffffff;
-  padding: 6px 14px;
-  border-radius: 4px;
-  background-color: rgba(221,68,132,0.918);
-  transition: all 0.2s ease;
-}
-
-
 
 /* Remove bulky default margins on the headings inside .stitch */
-.stitch h1, 
-.stitch h2, 
+.stitch h1,
+.stitch h2,
 .stitch h3 {
     margin: 2px 0;
     line-height: 1.2;
 }
+
 /* Optional: Put "BY:" and "Sariah Tanner" on the same line to save vertical space */
-.stitch h3, 
+.stitch h3,
 .stitch h2 {
     display: inline-block;
     font-size: 1rem;
     margin: 0 4px;
 }
+
 /* Shrink the needle image so it doesn't stretch the header height */
 .stitch .author-name img {
     width: 45px;
@@ -87,15 +80,31 @@
     margin-left: 8px;
 }
 
+
+
+/* 2. Position Home on the top-right */
+.home-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: rgba(221, 68, 132, 0.918);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 1.5px solid #ffffff;
+    padding: 6px 14px;
+    border-radius: 4px;
+    background-color: rgba(221, 68, 132, 0.918);
+    transition: all 0.2s ease;
+}
+
 a.home-link {
     color: #ffffff;
-  }
-
-
+}
 
 .home-link:hover {
-  background-color: #ffffff;
-  color: hsl(180, 24%, 93%);
+    background-color: #ffffff;
+    color: hsl(180, 24%, 93%);
 }
 
 
@@ -103,31 +112,39 @@ a.home-link {
 
 /*BACK BUTTON IN TOP-LEFT*/
 .back-btn {
-    position: absolute;       /* Positions it relative to the top-left of the page */
-    top: 20px;               /* Distance from top edge */
-    left: 20px;              /* Distance from left edge */
-    
+    position: absolute;
+    /* Positions it relative to the top-left of the page */
+    top: 20px;
+    /* Distance from top edge */
+    left: 20px;
+    /* Distance from left edge */
+
     /* Button appearance */
     display: inline-flex;
     align-items: center;
     gap: 6px;
     padding: 8px 16px;
-    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent soft white */
+    background-color: rgba(255, 255, 255, 0.85);
+    /* Semi-transparent soft white */
     color: #333333;
     text-decoration: none;
     font-family: sans-serif;
     font-size: 14px;
     font-weight: 600;
-    border-radius: 20px;      /* Rounded pill button */
+    border-radius: 20px;
+    /* Rounded pill button */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     transition: all 0.2s ease;
-    z-index: 100;             /* Keeps it on top of other elements */
+    z-index: 100;
+    /* Keeps it on top of other elements */
 }
+
 /* Hover effect */
 .back-btn:hover {
     background-color: #ffffff;
     color: #000000;
-    transform: translateX(-3px); /* Gently slides left when hovered */
+    transform: translateX(-3px);
+    /* Gently slides left when hovered */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -136,11 +153,15 @@ a.home-link {
 .add-to-cart-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;                   /* Space between icon, text, and price */
-    background-color: #46e9c5;   /* Button background color (forest green) */
-    color: #000000;              /* Text and icon color */
+    gap: 10px;
+    /* Space between icon, text, and price */
+    background-color: #46e9c5;
+    /* Button background color (forest green) */
+    color: #000000;
+    /* Text and icon color */
     border: none;
-    border-radius: 25px;         /* Rounded pill style */
+    border-radius: 25px;
+    /* Rounded pill style */
     padding: 12px 24px;
     font-size: 16px;
     font-weight: 600;
@@ -149,52 +170,71 @@ a.home-link {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: all 0.2s ease-in-out;
 }
+
 /* Hover effects */
 .add-to-cart-btn:hover {
-    background-color:#46e9c5;  /* Slightly darker green on hover */
-    transform: translateY(-2px); /* Slight lift effect */
+    background-color: #46e9c5;
+    /* Slightly darker green on hover */
+    transform: translateY(-2px);
+    /* Slight lift effect */
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
+
 .add-to-cart-btn:active {
-    transform: translateY(0);    /* Presses down when clicked */
+    transform: translateY(0);
+    /* Presses down when clicked */
 }
 
 
 
 /*FLOATING CART BUTTON IN BOTTOM-RIGHT CORNER*/
 .floating-cart {
-    position: fixed;            /* Pins it to the screen even when you scroll */
-    bottom: 25px;               /* Distance from the bottom edge */
-    right: 25px;                /* Distance from the right edge */
-    width: 60px;                /* Size of the circle */
+    position: fixed;
+    /* Pins it to the screen even when you scroll */
+    bottom: 25px;
+    /* Distance from the bottom edge */
+    right: 25px;
+    /* Distance from the right edge */
+    width: 60px;
+    /* Size of the circle */
     height: 60px;
-    background-color: #ffffff;  /* Background color behind the icon */
-    border-radius: 50%;         /* Makes it a perfect circle */
+    background-color: #ffffff;
+    /* Background color behind the icon */
+    border-radius: 50%;
+    /* Makes it a perfect circle */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Shadow to float off the page */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    /* Shadow to float off the page */
     text-decoration: none;
-    z-index: 1000;              /* Ensures it stays above all images and text */
+    z-index: 1000;
+    /* Ensures it stays above all images and text */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 /* Sizing your cart picture */
 .floating-cart img {
-    width: 32px;                /* Adjust size of the cart picture */
+    width: 32px;
+    /* Adjust size of the cart picture */
     height: auto;
     display: block;
 }
+
 /* Hover effect */
 .floating-cart:hover {
-    transform: scale(1.1);      /* Gently pops out when hovered */
+    transform: scale(1.1);
+    /* Gently pops out when hovered */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
+
 /* Optional red notification badge for number of items */
 .cart-badge {
     position: absolute;
     top: -2px;
     right: -2px;
-    background-color: #d32f2f;  /* Red badge color */
+    background-color: #d32f2f;
+    /* Red badge color */
     color: #ffffff;
     font-size: 12px;
     font-weight: bold;
@@ -205,7 +245,8 @@ a.home-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #ffffff;  /* White outline */
+    border: 2px solid #ffffff;
+    /* White outline */
 }
 
 
@@ -220,6 +261,7 @@ a.home-link {
     gap: 8px;
     z-index: 1000;
 }
+
 .floating-logout {
     background-color: rgba(221, 68, 132, 0.918);
     text-decoration: none;
@@ -231,16 +273,20 @@ a.home-link {
     transition: background-color 0.2s ease, transform 0.1s ease;
     cursor: pointer;
     display: inline-block;
-     color: #ffffff;
+    color: #ffffff;
 }
+
 .floating-logout:hover {
-    background-color:#ffffff;
+    background-color: #ffffff;
     transform: scale(1.05);
-    color:black;            
+    color: black;
 }
+
 #datetime {
-    background-color: #46e9c5; /* Your site's theme green */
-    color: #000000;             /* Black text so it's readable */
+    background-color: #46e9c5;
+    /* Your site's theme green */
+    color: #000000;
+    /* Black text so it's readable */
     font-size: 12px;
     padding: 6px 12px;
     border-radius: 4px;
@@ -256,13 +302,16 @@ a.home-link {
 .home-container .signup:hover,
 .home-container .login:hover {
     background-color: #ffffff;
-    color: #000000; /* Changes words to black on hover */
-}
-.home-link:hover {
-    color: #000000 !important; /* Turns words black on hover */
+    color: #000000;
+    /* Changes words to black on hover */
 }
 
-  
+.home-link:hover {
+    color: #000000 !important;
+    /* Turns words black on hover */
+}
+
+
 /*BACK BUTTON TO RETURN TO SEASONS PAGE*/
 .back-home-btn {
     position: absolute;
@@ -272,20 +321,26 @@ a.home-link {
     align-items: center;
     gap: 8px;
     padding: 8px 18px;
-    background-color: rgba(255, 255, 255, 0.9); /* Soft clean white */
-    color: #000000;                              /* Black text */
-    text-decoration: none;                       /* Removes underline */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Soft clean white */
+    color: #000000;
+    /* Black text */
+    text-decoration: none;
+    /* Removes underline */
     font-family: sans-serif;
     font-size: 14px;
     font-weight: 600;
-    border-radius: 20px;                         /* Pill shape */
+    border-radius: 20px;
+    /* Pill shape */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     transition: all 0.2s ease;
     z-index: 100;
 }
+
 .back-home-btn:hover {
     background-color: #ffffff;
-    transform: translateX(-4px);                 /* Slides slightly to the left on hover */
+    transform: translateX(-4px);
+    /* Slides slightly to the left on hover */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
@@ -295,8 +350,10 @@ a.home-link {
     color: #e63946;
     font-size: 0.85rem;
     margin: 5px 0 0 0;
-    display: none; /* hidden until an error occurs */
+    display: none;
+    /* hidden until an error occurs */
 }
+
 /* Red border on the input box when invalid */
 .input-error {
     border-color: #e63946 !important;
@@ -308,7 +365,7 @@ a.home-link {
 
 
 /*FOOTER*/
-.footer{
-  text-align: center;
-  color: black;
+.footer {
+    text-align: center;
+    color: black;
 }
