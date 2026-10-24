@@ -55,10 +55,10 @@
 
         <figure>
             <a href="../patterns/waves.html">
-                <img src="../images/Oregon3.jpg" alt="A picture of a waves crashing on the coast" width="400"
+                <img src="../images/Oregon3.jpg" alt="A picture of creeping vines on the Oregon coast" width="400"
                     height="300" />
             </a>
-            <figcaption>Rocky Shore</figcaption>
+            <figcaption>Creeping Vines</figcaption>
             <figcaption>$20.00</figcaption>
         </figure>
         <figure>
@@ -88,56 +88,54 @@
             <figcaption>$17.00 </figcaption>
         </figure>
 
-
-    </div>
-    <!-- Pinned Log Out & Date/Time Container -->
-    <div class="bottom-datetime-container">
-        <a href="../setup/logout.html" class="floating-logout">Log Out</a>
-        <div id="datetime"></div>
-    </div>
-    <!-- Single Floating Cart Button in Bottom-Right Corner -->
-    <a href="../contact/checkout.html" class="floating-cart" title="View Cart">
-        <img src="../images/shopping.png" alt="Shopping Cart">
-        <span class="cart-badge" id="cart-badge">0</span>
-    </a>
-    <!--Footer-->
-    <footer>
-        <div class="footer">
-            &copy Sariah Tanner 2026</div>
-    </footer>
-    <!-- Cleaned Combined Script -->
-    <script>
-        // 1. Live Date and Time
-        function updateDateTime() {
-            const now = new Date();
-            const options = {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            };
-            const formatted = now.toLocaleDateString('en-US', options);
-            const dateElem = document.getElementById('datetime');
-            if (dateElem) {
-                dateElem.textContent = formatted;
+        <!-- Pinned Log Out & Date/Time Container -->
+        <div class="bottom-datetime-container">
+            <a href="../setup/logout.html" class="floating-logout">Log Out</a>
+            <div id="datetime"></div>
+        </div>
+        <!-- Single Floating Cart Button in Bottom-Right Corner -->
+        <a href="../contact/checkout.html" class="floating-cart" title="View Cart">
+            <img src="../images/shopping.png" alt="Shopping Cart">
+            <span class="cart-badge" id="cart-badge">0</span>
+        </a>
+        <!--Footer-->
+        <footer>
+            <div class="footer">
+                &copy Sariah Tanner 2026</div>
+        </footer>
+        <!-- Cleaned Combined Script -->
+        <script>
+            // 1. Live Date and Time
+            function updateDateTime() {
+                const now = new Date();
+                const options = {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                };
+                const formatted = now.toLocaleDateString('en-US', options);
+                const dateElem = document.getElementById('datetime');
+                if (dateElem) {
+                    dateElem.textContent = formatted;
+                }
             }
-        }
-        updateDateTime();
-        setInterval(updateDateTime, 1000);
-        // 2. Shopping Cart Counter (reads saved count on page load)
-        function updateBadge() {
-            const cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
-            const badge = document.getElementById('cart-badge');
-            if (badge) {
-                badge.textContent = cart.length;
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+            // 2. Shopping Cart Counter (reads saved count on page load)
+            function updateBadge() {
+                const cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
+                const badge = document.getElementById('cart-badge');
+                if (badge) {
+                    badge.textContent = cart.length;
+                }
             }
-        }
-        updateBadge();
+            updateBadge();
 
-    </script>
+        </script>
 </body>
 
 </html>
