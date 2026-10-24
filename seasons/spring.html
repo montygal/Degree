@@ -47,11 +47,11 @@
             <figcaption>$12.00</figcaption>
         </figure>
         <figure>
-            <a href="../patterns/lemur.html">
-                <img src="../images/Africa2.jpg" alt="A picture of Africa in the Spring with a lemur" width="400"
+            <a href="../patterns/monkey.html">
+                <img src="../images/Africa2.jpg" alt="A picture of Africa in the Spring with a monkey" width="400"
                     height="300" />
             </a>
-            <figcaption>African Lemur</figcaption>
+            <figcaption>African Monkey</figcaption>
             <figcaption>$13.00 </figcaption>
         </figure>
 
@@ -72,24 +72,36 @@
             <figcaption>$15.00 </figcaption>
         </figure>
 
-        
+
         <figure>
             <a href="../patterns/ants.html">
-                <img src="../images/Africa5.jpg" alt="A picture of a baby African ant eater" width="400"
-                    height="300" />
+                <img src="../images/Africa5.jpg" alt="A picture of a baby African ant eater" width="400" height="300" />
             </a>
             <figcaption>African Ant Eater</figcaption>
             <figcaption>$15.00</figcaption>
         </figure>
         <figure>
             <a href="../patterns/chameleon.html">
-                <img src="../images/Africa6.jpg" alt="A picture of an African chameleon" width="400"
-                    height="300" />
+                <img src="../images/Africa6.jpg" alt="A picture of an African chameleon" width="400" height="300" />
             </a>
             <figcaption>African Chameleon</figcaption>
             <figcaption>$12.00 </figcaption>
         </figure>
 
+        <figure>
+            <a href="../patterns/lemur.html">
+                <img src="../images/Africa7.jpg" alt="A picture of a baby African ant eater" width="400" height="300" />
+            </a>
+            <figcaption>African Lemur</figcaption>
+            <figcaption>$18.00</figcaption>
+        </figure>
+        <figure>
+            <a href="../patterns/savanna.html">
+                <img src="../images/Africa8.jpg" alt="A picture of an African chameleon" width="400" height="300" />
+            </a>
+            <figcaption>The Savanna</figcaption>
+            <figcaption>$10.00 </figcaption>
+        </figure>
 
     </div>
     <!-- Pinned Log Out & Date/Time Container -->
@@ -130,21 +142,14 @@
         updateDateTime();
         setInterval(updateDateTime, 1000);
         // 2. Shopping Cart Counter (reads saved count on page load)
-        let count = parseInt(localStorage.getItem('cartItemCount')) || 0;
-        const badge = document.getElementById('cart-badge');
-        if (badge) {
-            badge.textContent = count;
-        }
-        function addToCart() {
-            count++;
-
-            // Update badge on screen
+        function updateBadge() {
+            const cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
+            const badge = document.getElementById('cart-badge');
             if (badge) {
-                badge.textContent = count;
+                badge.textContent = cart.length;
             }
-            // Save to browser memory
-            localStorage.setItem('cartItemCount', count);
         }
+        updateBadge();
     </script>
 </body>
 

@@ -113,21 +113,14 @@
         updateDateTime();
         setInterval(updateDateTime, 1000);
         // 2. Shopping Cart Counter (reads saved count on page load)
-        let count = parseInt(localStorage.getItem('cartItemCount')) || 0;
-        const badge = document.getElementById('cart-badge');
-        if (badge) {
-            badge.textContent = count;
-        }
-        function addToCart() {
-            count++;
-
-            // Update badge on screen
+        function updateBadge() {
+            const cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
+            const badge = document.getElementById('cart-badge');
             if (badge) {
-                badge.textContent = count;
+                badge.textContent = cart.length;
             }
-            // Save to browser memory
-            localStorage.setItem('cartItemCount', count);
         }
+        updateBadge();
 
     </script>
 

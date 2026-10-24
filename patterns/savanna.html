@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-image: url('../images/sakura.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .pictures img {
+            border: 8px solid rgba(35, 184, 147, 0.918);
+            outline: 3px solid #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savanna Pattern</title>
+    <link rel="stylesheet" href="../styles/pictures.css">
+</head>
+
+<body>
+    <!-- Back Button -->
+    <a href="../seasons/spring.html" class="back-home-btn">&larr; Back</a>
+    <div class="stitch">
+        <!-- Home link on the RIGHT -->
+        <a href="/" class="home-link">Home</a>
+        <h1>STITCH AND BLOOM</h1>
+        <h3>BY:</h3>
+        <h2><i>Sariah Tanner</i></h2>
+    </div>
+    <div class="pictures">
+        <img src="../images/Africa8.jpg" alt="A picture of the wild African bush" width="400" height="300">
+        <p>Africa has lots of dry savannas! These grasslands are home to a variety of wildlife, including lions, 
+            elephants, and zebras. The landscape is dotted with acacia trees and offers stunning views of the African plains.</p>
+
+        <!-- Fixed: Added button text back -->
+        <button type="button" class="add-to-cart-btn"
+            onclick="addToCart('Savanna Pattern', 10.00, '../images/Africa8.jpg')">
+            Add to Cart $10.00
+        </button>
+    </div>
+    <!-- Pinned Log Out & Date/Time Container -->
+    <div class="bottom-datetime-container">
+        <a href="../setup/logout.html" class="floating-logout">Log Out</a>
+        <div id="datetime"></div>
+    </div>
+    <!-- Single Floating Cart Button in Bottom-Right Corner -->
+    <a href="../contact/checkout.html" class="floating-cart" title="View Cart">
+        <img src="../images/shopping.png" alt="Shopping Cart">
+        <span class="cart-badge" id="cart-badge">0</span>
+    </a>
+    <!--Footer-->
+    <footer>
+        <div class="footer">
+            &copy Sariah Tanner 2026</div>
+    </footer>
+    <!-- Combined Scripts -->
+    <script>
+        // 1. Live Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const formatted = now.toLocaleDateString('en-US', options);
+            const dateElem = document.getElementById('datetime');
+            if (dateElem) {
+                dateElem.textContent = formatted;
+            }
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+        // 2. Shopping Cart Functions
+        function updateBadge() {
+            const cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
+            const badge = document.getElementById('cart-badge');
+            if (badge) {
+                badge.textContent = cart.length;
+            }
+        }
+        function addToCart(title, price, image) {
+            // 1. Get existing cart or start empty
+            let cart = JSON.parse(localStorage.getItem('stitchCart')) || [];
+            // 2. Add item details
+            cart.push({ title: title, price: price, image: image });
+            // 3. Save to browser memory
+            localStorage.setItem('stitchCart', JSON.stringify(cart));
+            // 4. Update badge
+            updateBadge();
+
+        }
+        // Run once on page load to display initial count
+        updateBadge();
+
+        // 3. Log Out Handler
+        function handleLogout(event) {
+            event.preventDefault();
+            localStorage.removeItem('loggedInUser');
+            alert("You have logged out.");
+            window.location.reload(); // Refreshes page as logged out
+        }
+
+    </script>
+</body>
+
+</html>
