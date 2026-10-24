@@ -21,29 +21,6 @@
 }
 
 
-/*CENTER THE PICTURE AND THE PARAGRAPH*/
-.pictures {
-    display: flex;
-    align-items: center;
-    /* Aligns image and text vertically in the middle */
-    justify-content: center;
-    /* Centers everything horizontally */
-    gap: 30px;
-    /* Space between the image and paragraph */
-    max-width: 900px;
-    /* Prevents the block from stretching too wide */
-    margin: 40px auto;
-    /* Centers the entire box on the page */
-    padding: 20px;
-}
-
-.pictures p {
-    max-width: 450px;
-    /* Keeps paragraph lines easy to read */
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
 /*HEADER ON THE MAIN PAGE*/
 /* Container needed to position the dropdown content */
 /* 1. Ensure the green container is the anchor */
@@ -107,6 +84,46 @@ a.home-link {
     color: hsl(180, 24%, 93%);
 }
 
+
+
+
+
+
+/*CENTER THE PICTURE AND THE PARAGRAPH*/
+.pictures {
+    display: flex;
+    align-items: center;
+    /* Aligns image and text vertically in the middle */
+    justify-content: center;
+    /* Centers everything horizontally */
+    gap: 30px;
+    /* Space between the image and paragraph */
+    max-width: 900px;
+    /* Prevents the block from stretching too wide */
+    margin: 40px auto;
+    /* Centers the entire box on the page */
+    padding: 20px;
+}
+
+.pictures p {
+    max-width: 450px;
+    /* Keeps paragraph lines easy to read */
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.pictures img {
+    width: 600px;
+    /* Increase this number to make it bigger */
+    max-width: 90%;
+    /* Keeps it from overflowing on smaller screens */
+    height: auto;
+    /* Keeps the original photo proportions */
+    border: 8px solid rgba(35, 184, 147, 0.918);
+    outline: 3px solid #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
 
 
 
