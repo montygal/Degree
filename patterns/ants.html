@@ -12,11 +12,49 @@
             margin: 0;
         }
 
+
         .pictures img {
             border: 8px solid rgba(35, 184, 147, 0.918);
             outline: 3px solid #ffffff;
             border-radius: 6px;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            border: 8px solid rgba(35, 184, 147, 0.918);
+            outline: 3px solid #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+            line-height: 0;
+        }
+
+        .image-wrapper img {
+            display: block;
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+
+        .sale-ribbon {
+            position: absolute;
+            top: 22px;
+            right: -38px;
+            width: 150px;
+            background-color: #e63946;
+            color: #ffffff;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            padding: 6px 0;
+            transform: rotate(45deg);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+            z-index: 2;
         }
     </style>
     <meta charset="UTF-8">
@@ -37,9 +75,16 @@
         <h2><i>Sariah Tanner</i></h2>
     </div>
     <div class="pictures">
-        <img src="../images/Africa5.jpg" alt="A picture of the African baby ant eaters" width="400" height="300">
-        <p>Baby ant eaters are born dependant on their mothers. They ride around on their mother's back until they are old enough to fend for themselves.
-            At around 6 months to a year, they will start to venture out on their own. This is a beautiful cross stitch that captures the essence of the 
+        <div class="image-wrapper">
+            <img src="../images/Africa5.jpg" alt="A picture of the African baby ant eaters" width="400" height="300">
+            <span class="sale-ribbon">SALE</span>
+        </div>
+
+
+        <p>Baby ant eaters are born dependant on their mothers. They ride around on their mother's back until they are
+            old enough to fend for themselves.
+            At around 6 months to a year, they will start to venture out on their own. This is a beautiful cross stitch
+            that captures the essence of the
             African wildlife.
         </p>
 

@@ -19,6 +19,50 @@
             border-radius: 6px;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
         }
+
+        .pictures img {
+            border: 8px solid rgba(35, 184, 147, 0.918);
+            outline: 3px solid #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            border: 8px solid rgba(35, 184, 147, 0.918);
+            outline: 3px solid #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+            line-height: 0;
+        }
+
+        .image-wrapper img {
+            display: block;
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+
+        .sale-ribbon {
+            position: absolute;
+            top: 22px;
+            right: -38px;
+            width: 150px;
+            background-color: #e63946;
+            color: #ffffff;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            padding: 6px 0;
+            transform: rotate(45deg);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+            z-index: 2;
+        }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,19 +84,22 @@
     <div class="spring">
         <figure>
             <a href="../patterns/moth.html">
-                <img src="../images/Africa.jpg" alt="A picture of Africa in the Spring with a moth" width="400"
-                    height="300" />
+                <div class="image-wrapper">
+                    <img src="../images/Africa.jpg" alt="A picture of Africa in the Spring with a moth" width="400"
+                        height="300" />
+                    <span class="sale-ribbon">SALE</span>
+                </div>
             </a>
-            <figcaption>African Moth</figcaption>
-            <figcaption>$12.00</figcaption>
+            <figcaption><strong>African Moth</strong></figcaption>
+            <figcaption><strong>$12.00</strong></figcaption>
         </figure>
         <figure>
             <a href="../patterns/monkey.html">
                 <img src="../images/Africa2.jpg" alt="A picture of Africa in the Spring with a monkey" width="400"
                     height="300" />
             </a>
-            <figcaption>African Monkey</figcaption>
-            <figcaption>$13.00 </figcaption>
+            <figcaption><strong>African Monkey</strong></figcaption>
+            <figcaption><strong>$13.00</strong></figcaption>
         </figure>
 
         <figure>
@@ -60,47 +107,55 @@
                 <img src="../images/Africa3.jpg" alt="A picture of a Africa in the Spring with a lizard" width="400"
                     height="300" />
             </a>
-            <figcaption>African Lizard</figcaption>
-            <figcaption>$13.00</figcaption>
+            <figcaption><strong>African Lizard</strong></figcaption>
+            <figcaption><strong>$13.00</strong></figcaption>
         </figure>
         <figure>
             <a href="../patterns/elephant.html">
                 <img src="../images/Africa4.jpg" alt="A picture of Africa in the Spring with an elephant" width="400"
                     height="300" />
             </a>
-            <figcaption>African Elephant</figcaption>
-            <figcaption>$15.00 </figcaption>
+            <figcaption><strong>African Elephant</strong></figcaption>
+            <figcaption><strong>$15.00</strong></figcaption>
         </figure>
 
 
         <figure>
             <a href="../patterns/ants.html">
-                <img src="../images/Africa5.jpg" alt="A picture of a baby African ant eater" width="400" height="300" />
+                <div class="image-wrapper">
+                    <img src="../images/Africa5.jpg" alt="A picture of a baby African ant eater" width="400"
+                        height="300" />
+                    <span class="sale-ribbon">SALE</span>
+                </div>
             </a>
-            <figcaption>African Ant Eater</figcaption>
-            <figcaption>$15.00</figcaption>
+            <figcaption><strong>African Ant Eater</strong></figcaption>
+            <figcaption><strong>$15.00</strong></figcaption>
         </figure>
+
+
+
+
         <figure>
             <a href="../patterns/chameleon.html">
                 <img src="../images/Africa6.jpg" alt="A picture of an African chameleon" width="400" height="300" />
             </a>
-            <figcaption>African Chameleon</figcaption>
-            <figcaption>$12.00 </figcaption>
+            <figcaption><strong>African Chameleon</strong></figcaption>
+            <figcaption><strong>$12.00</strong></figcaption>
         </figure>
 
         <figure>
             <a href="../patterns/lemur.html">
                 <img src="../images/Africa7.jpg" alt="A picture of a baby African ant eater" width="400" height="300" />
             </a>
-            <figcaption>African Lemur</figcaption>
-            <figcaption>$18.00</figcaption>
+            <figcaption><strong>African Lemur</strong></figcaption>
+            <figcaption><strong>$18.00</strong></figcaption>
         </figure>
         <figure>
             <a href="../patterns/savanna.html">
                 <img src="../images/Africa8.jpg" alt="A picture of an African chameleon" width="400" height="300" />
             </a>
-            <figcaption>The Savanna</figcaption>
-            <figcaption>$10.00 </figcaption>
+            <figcaption><strong>The Savanna</strong></figcaption>
+            <figcaption><strong>$10.00</strong></figcaption>
         </figure>
 
     </div>
