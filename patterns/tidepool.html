@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tidepool</title>
+    <link rel="stylesheet" href="../styles/pictures.css">
     <style>
         body {
             background-image: url('../images/sakura.jpg');
@@ -12,18 +17,49 @@
             margin: 0;
         }
 
-        .pictures img {
+        .pictures .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 600px;
+            max-width: 90%;
             border: 8px solid rgba(35, 184, 147, 0.918);
             outline: 3px solid #ffffff;
             border-radius: 6px;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+            line-height: 0;
+        }
+
+        .pictures .image-wrapper img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            border-radius: 0;
+        }
+
+        .sale-ribbon {
+            position: absolute;
+            top: 22px;
+            right: -38px;
+            width: 150px;
+            background-color: #e63946;
+            color: #ffffff;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            padding: 6px 0;
+            transform: rotate(45deg);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+            z-index: 2;
+            pointer-events: none;
         }
     </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tidepool</title>
-    <link rel="stylesheet" href="../styles/pictures.css">
 </head>
 
 <body>
@@ -37,13 +73,15 @@
         <h2><i>Sariah Tanner</i></h2>
     </div>
     <div class="pictures">
-        <img src="../images/Oregon6.jpg" alt="A picture of a tidepool on the Oregon coastline" width="400" height="300">
+        <div class="image-wrapper">
+            <img src="../images/Oregon6.jpg" alt="A picture of a tidepool on the Oregon coastline">
+            <span class="sale-ribbon">SALE</span>
+        </div>
         <p>Tide pools are shallow pools of water that form along rocky coastlines. They are home to a variety of marine
             life,
             including sea anemones, crabs, and fish. Sea gulls can often be seen perched on the rocks around the pools.
             They are homes
             to many different species of marine life.</p>
-
         <!-- Fixed: Added button text back -->
         <button type="button" class="add-to-cart-btn"
             onclick="addToCart('Tidepool Pattern', 17.00, '../images/Oregon6.jpg')">
@@ -104,11 +142,9 @@
             localStorage.setItem('stitchCart', JSON.stringify(cart));
             // 4. Update badge
             updateBadge();
-
         }
         // Run once on page load to display initial count
         updateBadge();
-
         // 3. Log Out Handler
         function handleLogout(event) {
             event.preventDefault();
@@ -116,7 +152,6 @@
             alert("You have logged out.");
             window.location.reload(); // Refreshes page as logged out
         }
-
     </script>
 </body>
 

@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer</title>
+    <link rel="stylesheet" href="../styles/summer.css">
     <style>
         body {
             background-image: url('../images/sakura.jpg');
@@ -19,12 +24,47 @@
             border-radius: 6px;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
         }
+
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            border: 8px solid rgba(35, 184, 147, 0.918);
+            outline: 3px solid #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+            line-height: 0;
+        }
+
+        .summer .image-wrapper img {
+            display: block;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .sale-ribbon {
+            position: absolute;
+            top: 22px;
+            right: -38px;
+            width: 150px;
+            background-color: #e63946;
+            color: #ffffff;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            padding: 6px 0;
+            transform: rotate(45deg);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+            z-index: 2;
+            pointer-events: none;
+        }
     </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summer</title>
-    <link rel="stylesheet" href="../styles/summer.css">
 </head>
 
 <body>
@@ -40,7 +80,10 @@
     <div class="summer">
         <figure>
             <a href="../patterns/beach.html">
-                <img src="../images/Oregon.jpg" alt="A picture of the Oregon coast" width="400" height="300" />
+                <div class="image-wrapper">
+                    <img src="../images/Oregon.jpg" alt="A picture of the Oregon coast" width="400" height="300" />
+                    <span class="sale-ribbon">SALE</span>
+                </div>
             </a>
             <figcaption><strong>Oregon Coast</strong></figcaption>
             <figcaption><strong>$12.00</strong></figcaption>
@@ -52,7 +95,6 @@
             <figcaption><strong>Oregon Cave</strong></figcaption>
             <figcaption><strong>$15.00</strong></figcaption>
         </figure>
-
         <figure>
             <a href="../patterns/waves.html">
                 <img src="../images/Oregon3.jpg" alt="A picture of creeping vines on the Oregon coast" width="400"
@@ -69,8 +111,6 @@
             <figcaption><strong>Lighthouse</strong></figcaption>
             <figcaption><strong>$25.00</strong></figcaption>
         </figure>
-
-
         <figure>
             <a href="../patterns/totem.html">
                 <img src="../images/Oregon5.jpg" alt="A picture of a totem pole on the coast" width="400"
@@ -80,19 +120,22 @@
             <figcaption><strong>$18.00</strong></figcaption>
         </figure>
         <figure>
-
             <a href="../patterns/tidepool.html">
-                <img src="../images/Oregon6.jpg" alt="A picture of a tidepool on the Oregon coastline" width="400"
-                    height="300" />
+                <div class="image-wrapper">
+                    <img src="../images/Oregon6.jpg" alt="A picture of a tidepool on the Oregon coastline" width="400"
+                        height="300" />
+                    <span class="sale-ribbon">SALE</span>
+                </div>
             </a>
             <figcaption><strong>Tidepool</strong></figcaption>
             <figcaption><strong>$17.00</strong></figcaption>
         </figure>
-
-
         <figure>
             <a href="../patterns/chipmunk.html">
-                <img src="../images/Oregon7.jpg" alt="A picture of a chipmunk in Oregon" width="400" height="300" />
+                <div class="image-wrapper">
+                    <img src="../images/Oregon7.jpg" alt="A picture of a chipmunk in Oregon" width="400" height="300" />
+                    <span class="sale-ribbon">SALE</span>
+                </div>
             </a>
             <figcaption><strong>Chipmunk</strong></figcaption>
             <figcaption><strong>$15.00</strong></figcaption>
@@ -115,7 +158,6 @@
         <img src="../images/shopping.png" alt="Shopping Cart">
         <span class="cart-badge" id="cart-badge">0</span>
     </a>
-
     <!--Footer-->
     <footer>
         <div class="footer">
@@ -152,7 +194,6 @@
             }
         }
         updateBadge();
-
     </script>
 </body>
 

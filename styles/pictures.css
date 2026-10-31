@@ -386,3 +386,47 @@ a.home-link {
     text-align: center;
     color: black;
 }
+
+
+
+/* SALE RIBBON WRAPPER FOR PATTERN PAGES */
+.pictures .image-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 600px;
+    max-width: 90%;
+    border: 8px solid rgba(35, 184, 147, 0.918);
+    outline: 3px solid #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    line-height: 0;
+}
+.pictures .image-wrapper img {
+    display: block;
+    width: 100%;
+    max-width: 100%; /* Overrides the 90% max-width so there is no gap */
+    height: auto;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+.sale-ribbon {
+    position: absolute;
+    top: 22px;
+    right: -38px;
+    width: 150px;
+    background-color: #e63946;
+    color: #ffffff;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    padding: 6px 0;
+    transform: rotate(45deg);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+    z-index: 2;
+    pointer-events: none;
+}
