@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fall</title>
+    <link rel="stylesheet" href="../styles/fall.css">
     <style>
         body {
             background-image: url('../images/sakura.jpg');
@@ -19,12 +24,47 @@
             border-radius: 6px;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
         }
+
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            border: 8px solid rgba(35, 184, 147, 0.918);
+            outline: 3px solid #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+            line-height: 0;
+        }
+
+        .fall .image-wrapper img {
+            display: block;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .sale-ribbon {
+            position: absolute;
+            top: 22px;
+            right: -38px;
+            width: 150px;
+            background-color: #e63946;
+            color: #ffffff;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            padding: 6px 0;
+            transform: rotate(45deg);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+            z-index: 2;
+            pointer-events: none;
+        }
     </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fall</title>
-    <link rel="stylesheet" href="../styles/fall.css">
 </head>
 
 <body>
@@ -52,7 +92,6 @@
             <figcaption><strong>English Countryside</strong></figcaption>
             <figcaption><strong>$20.00</strong></figcaption>
         </figure>
-
         <figure>
             <a href="../patterns/garden.html">
                 <img src="../images/England3.jpg" alt="A picture of an English garden" width="400" height="300" />
@@ -62,14 +101,20 @@
         </figure>
         <figure>
             <a href="../patterns/pond.html">
-                <img src="../images/England4.jpg" alt="A picture of a garden pond" width="400" height="300" />
+                <div class="image-wrapper">
+                    <img src="../images/England4.jpg" alt="A picture of a garden pond" width="400" height="300" />
+                    <span class="sale-ribbon">SALE</span>
+                </div>
             </a>
             <figcaption><strong>English Pond</strong></figcaption>
             <figcaption><strong>$15.00</strong></figcaption>
         </figure>
         <figure>
             <a href="../patterns/castle.html">
-                <img src="../images/England5.jpg" alt="A picture of an English castle" width="400" height="300" />
+                <div class="image-wrapper">
+                    <img src="../images/England5.jpg" alt="A picture of an English castle" width="400" height="300" />
+                    <span class="sale-ribbon">SALE</span>
+                </div>
             </a>
             <figcaption><strong>English Castle</strong></figcaption>
             <figcaption><strong>$23.00</strong></figcaption>
@@ -91,16 +136,14 @@
         </figure>
         <figure>
             <a href="../patterns/archway.html">
-                <img src="../images/England8.jpg" alt="A picture of a British archway" width="400" height="300" />
+                <div class="image-wrapper">
+                    <img src="../images/England8.jpg" alt="A picture of a British archway" width="400" height="300" />
+                    <span class="sale-ribbon">SALE</span>
+                </div>
             </a>
             <figcaption><strong>British Archway</strong></figcaption>
             <figcaption><strong>$23.00</strong></figcaption>
         </figure>
-
-    </div>
-
-
-
     </div>
     <!-- Pinned Log Out & Date/Time Container -->
     <div class="bottom-datetime-container">

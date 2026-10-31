@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tidepool</title>
+    <link rel="stylesheet" href="../styles/pictures.css">
     <style>
         body {
             background-image: url('../images/sakura.jpg');
@@ -12,18 +17,11 @@
             margin: 0;
         }
 
-
-        .pictures img {
-            border: 8px solid rgba(35, 184, 147, 0.918);
-            outline: 3px solid #ffffff;
-            border-radius: 6px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-        }
-
-        .image-wrapper {
+        .pictures .image-wrapper {
             position: relative;
-            display: inline-block;
             overflow: hidden;
+            width: 600px;
+            max-width: 90%;
             border: 8px solid rgba(35, 184, 147, 0.918);
             outline: 3px solid #ffffff;
             border-radius: 6px;
@@ -31,11 +29,15 @@
             line-height: 0;
         }
 
-        .image-wrapper img {
+        .pictures .image-wrapper img {
             display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
             border: none;
             outline: none;
             box-shadow: none;
+            border-radius: 0;
         }
 
         .sale-ribbon {
@@ -55,13 +57,9 @@
             transform: rotate(45deg);
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
             z-index: 2;
+            pointer-events: none;
         }
     </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ant Eaters</title>
-    <link rel="stylesheet" href="../styles/pictures.css">
 </head>
 
 <body>

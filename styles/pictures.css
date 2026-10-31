@@ -87,38 +87,26 @@ a.home-link {
 
 
 
-
-
 /*CENTER THE PICTURE AND THE PARAGRAPH*/
 .pictures {
     display: flex;
     align-items: center;
-    /* Aligns image and text vertically in the middle */
     justify-content: center;
-    /* Centers everything horizontally */
     gap: 30px;
-    /* Space between the image and paragraph */
-    max-width: 900px;
-    /* Prevents the block from stretching too wide */
+    max-width: 1250px; /* <-- Increased from 900px so the picture has room to grow! */
     margin: 40px auto;
-    /* Centers the entire box on the page */
     padding: 20px;
 }
-
 .pictures p {
     max-width: 450px;
-    /* Keeps paragraph lines easy to read */
     font-size: 1.1rem;
     line-height: 1.6;
 }
-
 .pictures img {
-    width: 600px;
-    /* Increase this number to make it bigger */
+    width: 500px; /* <-- Change this number (e.g. 500px, 600px) to set the exact image size */
     max-width: 90%;
-    /* Keeps it from overflowing on smaller screens */
     height: auto;
-    /* Keeps the original photo proportions */
+    flex-shrink: 0; /* <-- Stops the text from squishing the picture */
     border: 8px solid rgba(35, 184, 147, 0.918);
     outline: 3px solid #ffffff;
     border-radius: 6px;
@@ -393,8 +381,9 @@ a.home-link {
 .pictures .image-wrapper {
     position: relative;
     overflow: hidden;
-    width: 600px;
+    width: 500px; /* <-- Match the width in .pictures img above */
     max-width: 90%;
+    flex-shrink: 0; /* <-- Stops the text from squishing the sale picture! */
     border: 8px solid rgba(35, 184, 147, 0.918);
     outline: 3px solid #ffffff;
     border-radius: 6px;
@@ -404,7 +393,7 @@ a.home-link {
 .pictures .image-wrapper img {
     display: block;
     width: 100%;
-    max-width: 100%; /* Overrides the 90% max-width so there is no gap */
+    max-width: 100%;
     height: auto;
     border: none;
     outline: none;
